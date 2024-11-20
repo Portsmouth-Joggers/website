@@ -1,0 +1,14 @@
+:target :is(h1, h2, h3):first-of-type {
+  animation: 0.35s attention 3;
+}
+
+@keyframes attention {
+  0%, 100% {
+    filter: invert(0) blur(0px);
+  }
+
+  50% {
+    filter: invert(1) blur(5px);
+  }
+
+}

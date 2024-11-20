@@ -1,0 +1,98 @@
+:root {
+
+  --footerspace: 0.5em;
+  --fixedspace: 0.5rem;
+  --curve: 0;
+  --buttoncurve: calc(var(--fixedspace) * 0.25);
+  --lineheight: 1.5rem;
+
+  --gap: 0;
+
+  --sidemenu-display: contents;
+  --sidemenu-direction: row;
+  --sidemenu-gap: calc(var(--fixedspace) / 4);
+  --sidemenu-padding: calc(var(--fixedspace) / 4);
+  --sidemenu-curve: var(--buttoncurve);
+  --sidemenu-wrap: wrap;
+  --sidemenu-aside-position: fixed;
+  --sidemenu-width: 100%;
+  --sidemenu-height: 100%;
+  --sidemenu-background: var(--col2);
+  --sidemenu-container-padding: 0 0 0.5em 0;
+  --sidemenu-close-display: flex;
+  --sidemenu-a-padding: 0.5em 0.2em;
+  --sidemenu-a-height: 2em;
+  --sidemenu-socials-icon-size: 32px;
+  --sidemenu-hiding: none;
+  --sidemenu-margin: 1em;
+  --sidemenu-gap: 0.25em;
+  --sidemenu-flexgrow: 0;
+  --sidemenu-a-hover-bg: var(--page);
+  --sidemenu-a-hover-fg: var(--text);
+
+  --gridcols: 1fr;
+  --gridrows: auto auto auto auto 1fr auto;
+  --gridtemplateareas: "header" "sidemenu" "article" "footer";
+
+  --gridwrap: row;
+
+  --headergridcols: auto;
+  --headergridrows: auto;
+  --headergridtemplateareas: "h1";
+
+  --footerspace: 0;
+
+  --showhide: none;
+
+  --article-pad: 1em;
+
+  --header-font-size: 7cqw;
+
+  --header-justify: flex-start;
+}
+
+@media screen and (width > 40rem) {
+  :root {
+    --fixedspace: 1rem;
+    --footerspace: 0;
+    --padding: 2rem;
+    --gridcols: 10rem 1fr;
+    --gridrows: auto 1fr auto;
+    --gridtemplateareas: "header header" "sidemenu article" "footer footer";
+    --gap: 1em;
+
+    --gridwrap: column;
+
+    --sidemenu-display: flex;
+    --sidemenu-direction: column;
+    --sidemenu-width: unset;
+    --sidemenu-height: unset;
+    --sidemenu-background: transparent;
+    --sidemenu-container-padding: 0;
+    --sidemenu-close-display: none;
+    --sidemenu-default-display: unset;
+    --sidemenu-a-padding: 0.1em 0.2em;
+    --sidemenu-a-height: auto;
+    --sidemenu-socials-icon-size: 26px;
+    --sidemenu-hiding: inline-block;
+    --sidemenu-margin: 0;
+    --sidemenu-gap: 1em;
+    --sidemenu-flexgrow: 1;
+
+    --article-pad: 0;
+
+    --curve: calc(var(--fixedspace) * 0.25);
+
+    --showhide: block;
+
+    --header-font-size: 8cqw;
+    --header-justify: center;
+    --headergridtemplateareas: "logo h1" "logo text";
+  }
+}
+
+@media screen and (width > 50rem) {
+  :root {
+    --cardlist-columns: 1fr 1fr;
+  }
+}

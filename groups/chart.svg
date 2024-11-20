@@ -1,0 +1,264 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+
+  <style>
+  #axis-group {
+    font-size: 25px;
+    font-familt: "Sans-Serif";
+  }
+
+  .linky,
+  .linky * {
+    cursor: pointer
+  }
+
+  .linky {
+    fill: #0038A6;
+  }
+
+  .linky:hover{
+    stroke: #FECB00;
+    stroke-width: 0.5em;
+    fill: #3368D6;
+  }
+
+  </style>
+
+  <g id="axis">
+    <line id="kmaxis" x1="0" y1="600" x2="1400" y2="500" stroke="black"/>
+    <line id="miaxis" x1="0" y1="0" x2="1400" y2="0" stroke="black"/>
+    <g id="axis-group">
+    </g>
+  </g>
+  <g id="chart" />
+
+
+<script type="text/javascript">
+
+const groups = [
+  { "name": "Couch to 5K", "km": { "from": "7:30", "to": "10:00" }, link:"couch-to-5k-c25k" },
+  { "name": "Early Birds", "km": { "from": "7:30", "to": "8:30" }, link:"early-birds" },
+  { "name": "Social Runners", "km": { "from": "7:30", "to": "8:30" }, link:"social-runners" },
+  { "name": "Next Step", "km": { "from": "6:45", "to": "7:30" }, link:"next-step" },
+  { "name": "Inbetweeners", "km": { "from": "6:15", "to": "6:45" }, link:"inbetweeners" },
+  { "name": "Pace Cadets", "km": { "from": "5:30", "to": "6:15" }, link:"pace-cadets"},
+  { "name": "Pacers", "km": { "from": "5:15", "to": "5:35" }, link:"pacers" },
+  { "name": "Racers", "km": { "from": "4:40", "to": "5:15" }, link:"whacky-racers"  },
+  { "name": "Endurance", "km": { "from": "4:50", "to": "5:45" }, link:"endurance" },
+];
+
+const svgNS = "http://www.w3.org/2000/svg";
+const chartGroup = document.querySelector("#chart");
+const axisGroup = document.querySelector("#axis-group");
+
+let pageWidth=600;
+let pageHeight=600;
+let viewBoxWidth=700; 
+let viewBoxHeight=700;
+let textSize = 20;
+
+const padding = 100;
+const intraRowGap = 4;
+const sortedTimes = getTimesArray(groups);
+const [minTime, maxTime] = findTimeRange(sortedTimes);
+
+let xScale = pageWidth / (maxTime-minTime);
+let yScale = (pageHeight / groups.length) - intraRowGap ; 
+
+// Set viewBox attribute dynamically
+function adjustViewBox() {
+
+  // discover page width and height
+  pageWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  pageHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+  viewBoxWidth = pageWidth + (2*padding); 
+  viewBoxHeight = pageHeight + (2*padding);
+  textSize = pageHeight/24;
+  xScale = pageWidth / (maxTime-minTime);
+  yScale = (pageHeight / groups.length) - intraRowGap ; 
+
+  const svgElement = document.querySelector("svg");
+  svgElement.setAttribute("viewBox", `${-padding} ${-padding} ${viewBoxWidth} ${viewBoxHeight}`);
+  svgElement.setAttribute("width", pageWidth);
+  svgElement.setAttribute("height", pageHeight);
+
+  // addDebugRect(svgElement);
+}
+
+function addDebugRect(svgElement) {
+  const debugRect = document.createElementNS(svgNS, "rect");
+  debugRect.setAttribute("x", 0);
+  debugRect.setAttribute("y", 0);
+  debugRect.setAttribute("width", pageWidth);
+  debugRect.setAttribute("height", pageHeight);
+  debugRect.setAttribute("stroke", "#00FF00");
+  debugRect.setAttribute("fill", "none");
+  debugRect.setAttribute("stroke-dasharray", "6 6");
+  svgElement.appendChild(debugRect);
+}
+
+function timeToDecimal(time) {
+  const [minutes, seconds] = time.split(":").map(Number);
+  return minutes + (seconds / 60);
+}
+
+// Find the maximum time value in the data
+function findTimeRange(sortedTimes) {
+  let maxTime = 0;
+  let minTime = Infinity;
+  sortedTimes.forEach(time => {
+    const t = timeToDecimal(time);
+    maxTime = Math.max(maxTime, t);
+    minTime = Math.min(minTime, t);
+  });
+  return [minTime, maxTime];
+}
+
+function clearElement(element) {
+  while (element.firstChild) {
+    element.removeChild(element.firstChild);
+  }
+}
+
+function drawGroups() {
+  clearElement(chartGroup);
+
+  groups.forEach((group, index) => {
+    const y = index * (yScale + intraRowGap);
+    const height = yScale;
+
+    const xFrom = (timeToDecimal(group["km"].from)-minTime) * xScale;
+    const xTo = (timeToDecimal(group["km"].to)-minTime) * xScale;
+    const width = xTo - xFrom;
+
+    const rect = document.createElementNS(svgNS, "rect");
+    rect.setAttribute("x", pageWidth - xTo);
+    rect.setAttribute("y", y);
+    rect.setAttribute("rx", intraRowGap);
+    rect.setAttribute("ry", intraRowGap);
+    rect.setAttribute("width", width);
+    rect.setAttribute("height", height);
+    rect.setAttribute("class", "linky");
+    chartGroup.appendChild(rect);
+
+    rect.addEventListener("click", () => {
+      window.location = "./#"+group.link;
+    });
+
+    const text = document.createElementNS(svgNS, "text");
+    text.setAttribute("x", pageWidth - xTo + 10);
+    text.setAttribute("y", y + height / 2 + 5);
+    text.textContent = group.name;
+    text.setAttribute("fill", "white");
+    chartGroup.appendChild(text);
+  });
+}
+
+function getTimesArray(groups) {
+  const uniqueTimes = new Set();
+  groups.forEach(group => {
+    uniqueTimes.add(group["km"].from);
+    uniqueTimes.add(group["km"].to);
+  });
+  return Array.from(uniqueTimes).sort();
+}
+
+
+function adjustAxis() {
+  const kmAxis = document.querySelector("#kmaxis");
+  const miAxis = document.querySelector("#miaxis");
+
+  kmAxis.setAttribute("x1", 0);
+  kmAxis.setAttribute("y1", pageHeight);
+  kmAxis.setAttribute("x2", pageWidth);
+  kmAxis.setAttribute("y2", pageHeight);
+
+  miAxis.setAttribute("x1", 0);
+  miAxis.setAttribute("y1", 0);
+  miAxis.setAttribute("x2", pageWidth);
+  miAxis.setAttribute("y2", 0);
+
+}
+
+function paceKmToMile(pacePerKm) {
+    const [minutes, seconds] = pacePerKm.split(':').map(Number);
+    const totalSecondsPerKm = minutes * 60 + seconds;
+    const totalSecondsPerMile = totalSecondsPerKm * 1.60934;
+    const roundedSecondsPerMile = Math.round(totalSecondsPerMile / 5) * 5;
+    const minutesPerMile = Math.floor(roundedSecondsPerMile / 60);
+    const secondsPerMile = roundedSecondsPerMile % 60;
+    const formattedPacePerMile = `${minutesPerMile}:${secondsPerMile.toString().padStart(2, '0')}`;
+    return formattedPacePerMile;
+}
+
+function addPaceMarkersToAxis() {
+  clearElement(axisGroup);
+
+  let alternate = 0;
+  sortedTimes.forEach(time => {
+    const x = (timeToDecimal(time) - minTime) * xScale;
+
+    // vertical dashed bars
+    const thing = document.createElementNS(svgNS, "line");
+    thing.setAttribute("x1", pageWidth-x);
+    thing.setAttribute("y1", 0);
+    thing.setAttribute("x2", pageWidth-x);
+    thing.setAttribute("y2", pageHeight);
+    thing.setAttribute("stroke", "#666666");
+    thing.setAttribute("stroke-dasharray", "6 6");
+    
+    axisGroup.appendChild(thing);
+
+    const offset = alternate * (padding/4) + padding/4;
+
+    const kmTick = document.createElementNS(svgNS, "line");
+    kmTick.setAttribute("x1", pageWidth-x);
+    kmTick.setAttribute("y1", pageHeight);
+    kmTick.setAttribute("x2", pageWidth-x);
+    kmTick.setAttribute("y2", pageHeight + offset);
+    kmTick.setAttribute("stroke", "black");
+    axisGroup.appendChild(kmTick);
+
+    const kmLabel = document.createElementNS(svgNS, "text");
+    kmLabel.setAttribute("x", pageWidth-x);
+    kmLabel.setAttribute("y", pageHeight + offset + textSize/2);
+    kmLabel.setAttribute("text-anchor", "middle");
+    kmLabel.textContent = time === "10:00" ? "mins/km" : time;
+    axisGroup.appendChild(kmLabel);
+
+    const miTick = document.createElementNS(svgNS, "line");
+    miTick.setAttribute("x1", pageWidth-x);
+    miTick.setAttribute("y1", 0);
+    miTick.setAttribute("x2", pageWidth-x);
+    miTick.setAttribute("y2", 0 - offset);
+    miTick.setAttribute("stroke", "black");
+    axisGroup.appendChild(miTick);
+
+    const miLabel = document.createElementNS(svgNS, "text");
+    miLabel.setAttribute("x", pageWidth-x);
+    miLabel.setAttribute("y", 0 - offset);
+    miLabel.setAttribute("text-anchor", "middle");
+    miLabel.textContent = time === "10:00" ? "mins/mile" : paceKmToMile(time);
+    axisGroup.appendChild(miLabel);
+
+    alternate = ++alternate % 3;
+  });
+}
+
+
+function adjustViewBoxAndRedraw() {
+  adjustViewBox();
+  adjustAxis();
+  addPaceMarkersToAxis();
+  drawGroups();
+}
+
+// Initial draw
+adjustViewBoxAndRedraw();
+
+// Redraw on resize or orientation change
+window.addEventListener('resize', adjustViewBoxAndRedraw);
+window.addEventListener('orientationchange', adjustViewBoxAndRedraw);
+
+</script>
+
+</svg>
