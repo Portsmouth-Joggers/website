@@ -130,9 +130,9 @@ header > h1 {
   margin: 0;
   padding: 0;
   font-size: var(--header-font-size);
-  text-align: center;
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
 
 header p {
