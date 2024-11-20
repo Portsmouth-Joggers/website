@@ -139,7 +139,7 @@ header p {
   grid-area: text;
   margin: 0;
   display: var(--showhide);
-  margin-top: -4em;
+  margin-top: -8cqw;
   margin-inline-start: 0.20em;
   background: none;
   opacity: 0.4;
