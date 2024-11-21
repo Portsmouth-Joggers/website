@@ -32,7 +32,7 @@
 
   --gridcols: 1fr;
   --gridrows: auto auto auto auto 1fr auto;
-  --gridtemplateareas: "header" "sidemenu" "article" "footer";
+  --gridtemplateareas: "header" "sidemenu" "article" "." "." "footer";
 
   --gridwrap: row;
 
@@ -49,6 +49,9 @@
   --header-font-size: 7cqw;
 
   --header-justify: flex-start;
+
+  --show-hide: inherit;
+  --hide-show: none;
 }
 
 @media screen and (width > 40rem) {
@@ -88,6 +91,10 @@
     --header-font-size: 8cqw;
     --header-justify: center;
     --headergridtemplateareas: "logo h1" "logo text";
+
+    --show-hide: none;
+    --hide-show: inherit;
+  
   }
 }
 

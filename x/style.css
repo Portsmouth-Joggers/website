@@ -114,7 +114,7 @@ header {
 
 header * {
   margin:0;
-  padding: 0;
+  padding:0;
   color: var(--headertext);
   background: var(--col2);
   text-decoration: none;
@@ -125,19 +125,15 @@ header #masthead {
   grid-area: logo;
 }
 
-header > h1 {
+header > p.banner {
   grid-area: h1;
-  margin: 0;
-  padding: 0;
   font-size: var(--header-font-size);
-  display: flex;
-  align-items: center;
+  font-weight: bold;
   justify-content: space-around;
 }
 
-header p {
+header p.tagline {
   grid-area: text;
-  margin: 0;
   display: var(--showhide);
   margin-top: -8cqw;
   margin-inline-start: 0.20em;
@@ -277,7 +273,6 @@ article section {
   gap: 1em;
 }
 
-
 figure {
   display:grid;
   align-self: flex-start;
@@ -299,3 +294,9 @@ figure>figcaption a {
   background: var(--col1light);
   color: var(--text);
 }
+
+#sidemenu q { display: var(--show-hide); text-decoration: none; }
+#sidemenu q:before { content: ""; }
+#sidemenu q:after { content: ""; }
+#sidemenu s { display: var(--hide-show); text-decoration: none; }
+
