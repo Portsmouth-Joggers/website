@@ -269,11 +269,25 @@ article section {
   clear: both;
 }
 
+
 .sidebyside {
   display: grid;
   grid-auto-flow: var(--gridwrap);
   align-items: start;
   gap: 1em;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+  gap: 1em;
+}
+
+.cards * {
+  flex: 1 1 0;
+  min-width: 20em;
 }
 
 figure {
