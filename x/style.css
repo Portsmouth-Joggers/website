@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
-
 }
 
 html {
@@ -260,6 +259,10 @@ nav#sidemenu a:hover {
 main .menu a {
   display: inline-block;
   vertical-align: top;
+}
+
+main a {
+  text-decoration: underline;
 }
 
 article section {
