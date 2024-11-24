@@ -317,9 +317,6 @@ figure>figcaption a {
 #sidemenu q:after { content: ""; }
 #sidemenu s { display: var(--hide-show); text-decoration: none; }
 
-nav#sidemenu section.socials {
-  background: red;
-}
 
 .actionButton {
   float: right;
