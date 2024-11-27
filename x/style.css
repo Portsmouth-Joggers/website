@@ -341,3 +341,14 @@ figure>figcaption a {
   box-shadow: 0 0.4em 0.5em rgba(0, 0, 0, 0.75);
   color: var(--col1)
 }
+section table{
+  border: 1px solid black;
+}
+
+section th, section td {
+  text-align: center;
+  border: 1px solid var(--text);
+  border-collapse: collapse;
+  height: 2vh;
+  width: 20vh;
+}
