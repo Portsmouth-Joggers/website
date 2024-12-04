@@ -15,7 +15,8 @@
 
   --headertext: var(--page);
   --sidemenu-text: var(--page);
-  --figure-shadow: var(--col2);
+  --figure-shadow: #4447;
+  --shadow: 0 0.5em 1em var(--figure-shadow);
   --figure-text: var(--textinv);;
 }
 
