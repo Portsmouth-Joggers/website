@@ -22,8 +22,6 @@ body {
   padding: var(--padding);
   min-height: 100dvh;
   max-width: 60em;
-
-  text-wrap: balance;
 }
 
 a {
@@ -176,6 +174,15 @@ main {
   & a {
     text-decoration: underline;
   }
+
+  /* Balance the text on only the last paragrah on the page 
+   * it's either a direct child of an article, or a child of
+   * a section
+   */
+  & :is(article, section:last-child)>p:last-child:not(p:first-child) {
+    text-wrap: balance;
+  }
+
 }
 
 nav {
