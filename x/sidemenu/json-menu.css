@@ -1,0 +1,22 @@
+:host {
+
+  --direction: column;
+
+  background-color: var(--col1light);
+  border-radius: calc(var(--fixedspace) / 4);
+  padding: calc( var(--fixedspace) / 4);
+  display: flex;
+  flex-direction: var(--direction);
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: var(--fixedspace);
+
+  & h2 {
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0;
+    padding: calc(var(--fixedspace) / 4) calc(var(--fixedspace) / 2);;
+    min-width: 4em;
+  }
+
+}

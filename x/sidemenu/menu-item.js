@@ -39,29 +39,7 @@ class MenuItem extends HTMLElement {
 
     this.shadowRoot.innerHTML = `
       <style>
-        @import url('/x/colours.css');
-
-        :host {
-          display: flex;
-          align-items: center;
-          cursor: pointer;
-          padding: 0.25em;
-          text-decoration: none;
-          background: var(--col2);
-          color: var(--page);
-          border: var(--page) solid thin;
-          border-radius: 0.25em;
-          transition: filter 0.1s;
-        }
-          
-        :host(:hover) {
-          filter: invert(1) hue-rotate(180deg);
-        }
-
-        svg {
-          margin-right: 0.5em;
-          width: 1em;
-        }
+        @import url('./menu-item.css');
       </style>
       ${icon ? iconSvg : ''}
       <span>${text}</span>

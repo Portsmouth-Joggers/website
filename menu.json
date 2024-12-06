@@ -1,0 +1,63 @@
+[
+  {
+    "title": "Menu",
+    "items": [
+      {
+        "text": "About us",
+        "href": "/"
+      },
+      {
+        "text": "Running Groups",
+        "href": "/groups/"
+      },
+      {
+        "text": "Couch to 5K",
+        "href": "/c25k/"
+      },
+      {
+        "text": "Upcoming Events",
+        "href": "/events/"
+      },
+      {
+        "text": "Our Races",
+        "href": "/races/"
+      },
+      {
+        "text": "Club Kit",
+        "href": "/kit/"
+      },
+      {
+        "text": "Newsletters",
+        "href": "/newsletters/"
+      },
+      {
+        "text": "The Committee",
+        "href": "/committee/"
+      },
+      {
+        "text": "Join us",
+        "href": "/join/"
+      }
+    ]
+  },
+  {
+    "title": "Social Media",
+    "items": [
+      {
+        "text": "Facebook",
+        "href": "https://www.facebook.com/groups/129643517173916",
+        "icon": "/x/logo-fb.svg"
+      },
+      {
+        "text": "Members Area",
+        "href": "https://www.facebook.com/groups/786928831462848",
+        "icon": "/x/logo-fb.svg"
+      },
+      {
+        "text": "Instagram",
+        "href": "https://www.instagram.com/portsmouthjoggers/",
+        "icon": "/x/logo-ig.svg"
+      }
+    ]
+  }
+]
