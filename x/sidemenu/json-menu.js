@@ -39,10 +39,11 @@ class JsonMenu extends HTMLElement {
     `;
 
     for (const section of data) {
-      const sectionElement = document.createElement('nav');
-      const titleElement = document.createElement('h2');
-      titleElement.textContent = section.title;
-      sectionElement.appendChild(titleElement);
+      const div = document.createElement('div');
+      const nav = document.createElement('nav');
+      const h2 = document.createElement('h2');
+      h2.textContent = section.title;
+      nav.append(h2);
 
       for (const item of section.items) {
         const menuItem = document.createElement('menu-item');
@@ -51,10 +52,11 @@ class JsonMenu extends HTMLElement {
         if (item.icon) {
           menuItem.setAttribute('icon', item.icon);
         }
-        sectionElement.appendChild(menuItem);
+        nav.append(menuItem);
       }
 
-      this.shadowRoot.appendChild(sectionElement);
+      div.append(nav);
+      this.shadowRoot.append(div);
     }
   }
 }

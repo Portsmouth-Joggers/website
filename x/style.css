@@ -187,6 +187,7 @@ main {
 
 json-menu {
   grid-area: sidemenu;
+  align-self: start;
 }
 
 .sidebyside {

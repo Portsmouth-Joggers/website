@@ -2,21 +2,71 @@
 
   --direction: column;
 
-  background-color: var(--col1light);
-  border-radius: calc(var(--fixedspace) / 4);
-  padding: calc( var(--fixedspace) / 4);
-  display: flex;
-  flex-direction: var(--direction);
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: var(--fixedspace);
+  container-type: inline-size;
+  container-name: sidebar;
 
-  & h2 {
-    display: inline-block;
-    font-size: 1rem;
-    margin: 0;
-    padding: calc(var(--fixedspace) / 4) calc(var(--fixedspace) / 2);;
-    min-width: 4em;
+  flex-wrap: nowrap;
+
+  & div {
+    background-color: var(--col1light);
+    border-radius: calc(var(--fixedspace) / 4);
+    padding: calc( var(--fixedspace) / 4);
+    display: flex;
+    flex-direction: var(--direction);
+    justify-content: space-evenly;
+    gap: var(--fixedspace);
+
+    flex-wrap: nowrap;
+
+    & nav {
+      display: flex;
+      flex-direction: var(--direction);
+      gap: calc(var(--fixedspace) / 2);
+      flex-wrap: wrap;
+    }
+
+    & h2 {
+      display: inline-block;
+      font-size: 1rem;
+      margin: 0;
+      padding: calc(var(--fixedspace) / 4) calc(var(--fixedspace) / 2);
+      min-width: 4em;
+    }
+
   }
 
 }
+
+@container sidebar (width>20em)  {
+  :host {
+
+    & div {
+
+      flex-direction: row;
+      background-color: red !important;
+
+      &>nav:first-of-type {
+        background-color: pink !important;
+        max-width: min-content;
+      }
+
+      &>nav:not(:first-of-type) {
+        background-color: green !important;
+        max-width: 40em;
+      }
+
+      & nav {
+        display: flex;
+        flex-direction: row;
+        gap: calc(var(--fixedspace) / 2);
+        flex-shrink: 1;
+        width: min-content;
+      }
+
+      & h2 {
+        display: none;
+      }
+
+    }
+  }
+} 
