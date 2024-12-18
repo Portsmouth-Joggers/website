@@ -6,7 +6,7 @@
 <link rel="icon" href="/x/logo-pj.svg">
 
 <link rel="canonical" href="https://pjc.org.uk/races/">
-<title>PJC Races</title>
+<title>Races &amp; Events</title>
 <meta name="description" content="Details of races organised by Portsmouth Joggers.">
 
 <style>
@@ -18,6 +18,49 @@
 
   figure {
     margin-block-start: 1em;
+  }
+
+  table {
+    border-radius: var(--curve);
+    border-collapse: collapse;
+    border: thin solid black;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: var(--shadow);
+
+    /* align everything left */
+    & th,
+    & td {
+      text-align: left;
+      height: 2rem;
+      padding-left: 1rem;
+    }
+
+    /* the first column is right aligned */
+    & :is(th, td):first-child {
+      width: 15ch;
+      text-align: right;
+    }
+
+    /* make the background of the header row different */
+    & th {
+      margin-left: 1em;
+      background-color: var(--col1);
+      color: var(--text);
+    }
+
+    /* alternate row colours to avoid the need for borders */
+    & tr:nth-child(odd) {
+      background-color: var(--page);
+    }
+
+    & tr:nth-child(even) {
+      background-color: var(--textinv);
+    }
+
+    & tr a {
+      background-color: inherit;
+    }
   }
 </style>
 
@@ -34,8 +77,7 @@
       <a href="/">About<s> us</s></a>
       <a href="/groups/"><s>Running </s>Groups</a>
       <a href="/c25k/"><s>Couch to 5K</s><q>C25K</q></a>
-      <a href="/events/"><s>Upcoming </s>Events</a>
-      <a href="/races/"><s>Our </s>Races</a>
+      <a href="/races/">Races<s> &amp; Events</s></a>
       <a href="/kit/"><s>Club </s>Kit</a>
       <a href="/newsletters/">News<s>letters</s></a>
       <a href="/committee/"><s>The </s>Committee</a>
@@ -46,21 +88,105 @@
       <h2>Social Media</h2>
       <a href="https://www.facebook.com/groups/129643517173916" title="Facebook" aria-label="Facebook" target="_blank" rel="noopener me"><img src="/x/logo-fb.svg" alt="Visit our Facebook group" width="24" height="24"><s>Facebook</s></a>
       <a href="https://www.instagram.com/portsmouthjoggers/" title="Instagram" aria-label="Instagram" target="_blank" rel="noopener me"><img src="/x/logo-ig.svg" alt="See our Instagram feed" width="24" height="24"><s>Instagram</s></a>
-      <br/>
+      <br />
       <a href="https://www.facebook.com/groups/786928831462848" title="Facebook" aria-label="Facebook" target="_blank" rel="noopener me"><img src="/x/logo-fb.svg" alt="Club Members Facebook group" width="24" height="24"><s>Members</s></a>
     </section>
   </nav>
 
+
   <article>
 
-    <h1>Our Races</h1>
+    <h1>Upcoming Races & Events</h1>
 
-    <p>We organise several races per year, these are:
-    <ol>
-      <li><a href="./p2p/">The Pub-to-Pub Run</a></li>
-      <li><a href="./pl5/">The Purbrook Ladies 5</a></li>
-      <li><a href="./sxc/">The Summer Cross Country</a></li>
-    </ol>
+    <p>
+      We regularly attend races in Portsmouth, around Hampshire, and further afield. In addition to attending races, we also organise them. This list contains the current events we're planning on attending or have recently attended.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Race</th>
+          <th>Organiser</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1st Dec 2024</td>
+          <td><a href="https://register.enthuse.com/ps/event/The78thVictory5Mile2024">Victory 5 mile</a></td>
+          <td><a href="https://hrrl.co.uk/">HRRL</a></td>
+        </tr>
+        <tr>
+          <td>15th Dec 2024</td>
+          <td><a href="https://www.southerncrosscountryleague.co.uk/lordwandsworth.aspx">Lord Wandsworth College</a></td>
+          <td><a href="https://www.southerncrosscountryleague.co.uk/">SCCL</a></td>
+        </tr>
+
+        <tr>
+          <td>27th Dec 2024</td>
+          <td><a href="/races/p2p/">Pub2Pub</a></td>
+          <td><a href="/races/p2p/">PJC</a></td>
+        </tr>
+
+        <tr>
+          <td>29th Dec 2024</td>
+          <td><a href="https://www.southerncrosscountryleague.co.uk/aliceholt.aspx">Alice Holt</a></td>
+          <td><a href="https://www.southerncrosscountryleague.co.uk/">SCCL</a></td>
+        </tr>
+        <tr>
+          <td>12th Jan 2025</td>
+          <td><a href="https://www.stubbingtongreenrunners.net/stubbington-10k/">Stubbington 10k</a></td>
+          <td><a href="https://hrrl.co.uk/">HRRL</a></td>
+        </tr>
+        <tr>
+          <td>19th Jan 2025</td>
+          <td><a href="https://www.southerncrosscountryleague.co.uk/chawtonhouse.aspx">Chawton House</a></td>
+          <td><a href="https://www.southerncrosscountryleague.co.uk/">SCCL</a></td>
+        </tr>
+        <tr>
+          <td>2nd Feb 2025</td>
+          <td><a href="https://www.rydeharriers.co.uk/races/the-ryde-10-mile-road-race/">Ryde 10 mile</a></td>
+          <td><a href="https://hrrl.co.uk/">HRRL</a></td>
+        </tr>
+        <tr>
+          <td>6th Apr 2025</td>
+          <td><a href="https://www.salisbury-arc.org/salisbury-10">Salisbury 10 mile</a></td>
+          <td><a href="https://hrrl.co.uk/">HRRL</a></td>
+        </tr>
+        <tr>
+          <td>11th May 2025</td>
+          <td><a href="https://alresford-rotary.org/10k-race/">Alresford 10k</a></td>
+          <td><a href="https://hrrl.co.uk/">HRRL</a></td>
+        </tr>
+        <tr>
+          <td>6th Jul 2025</td>
+          <td><a href="https://www.lordshillroadrunners.org.uk/races/lordshill-10k/">Lordshill 10k</a></td>
+          <td><a href="https://hrrl.co.uk/">HRRL</a></td>
+        </tr>
+        <tr>
+          <td>Summer 2025</td>
+          <td><a href="./pl5/">Purbrook Ladies 5</a></td>
+          <td><a href="./pl5/">PJC</a></td>
+        </tr>
+        <tr>
+          <td>Summer 2025</td>
+          <td><a href="./sxc/">Summer Cross Country</a></td>
+          <td><a href="./sxc/">PJC</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <section>
+      <h2>Our Races</h2>
+
+      <p>The annual races we organise are:
+      <ol>
+        <li><a href="./p2p/">The Pub-to-Pub Run</a></li>
+        <li><a href="./pl5/">The Purbrook Ladies 5</a></li>
+        <li><a href="./sxc/">The Summer Cross Country</a></li>
+      </ol>
+
+    </section>
   </article>
 </main>
 <footer>
