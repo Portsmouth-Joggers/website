@@ -37,9 +37,28 @@ class JsonMenu extends HTMLElement {
     }
   }
 
+  highlightCurrent(item, currentUrl) {
+    const href = item.getAttribute('href');
+    const xhref = href.endsWith('/') ? href.slice(0, -1) : href;
+
+    if (xhref.length === 0) {
+      if (location.pathname.length === 1) {
+        item.classList.add('current');
+      }
+    } else {
+      if (currentUrl.endsWith(xhref)) {
+        item.classList.add('current');
+      }
+    }
+  }
+
+
   renderMenu(data) {
-    // use the current folder of this script to load the menu
-    
+    let currentUrl = window.location.href;
+    // if there is a trailing "/" strip it
+    if (currentUrl.endsWith('/')) {
+      currentUrl = currentUrl.slice(0, -1);
+    }
 
     this.shadowRoot.innerHTML = `
       <style>
@@ -61,6 +80,9 @@ class JsonMenu extends HTMLElement {
         if (item.icon) {
           menuItem.setAttribute('icon', item.icon);
         }
+
+        this.highlightCurrent(menuItem, currentUrl);
+
         nav.append(menuItem);
       }
 
@@ -124,10 +146,9 @@ class MenuItem extends HTMLElement {
 function initMenu() {
   let menu = document.querySelector('json-menu');
   if (!menu) {
-    console.log('auto adding menu');
     menu = document.createElement('json-menu');
     menu.setAttribute('href', '/menu.json');
-    document.body.prepend(menu); 
+    document.body.prepend(menu);
   }
 
 }

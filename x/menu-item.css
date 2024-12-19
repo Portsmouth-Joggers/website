@@ -11,7 +11,8 @@
   transition: filter 0.1s;
 }
   
-:host(:hover) {
+/* only hover if the :host does not have the current class */
+:host(:not(.current):hover) {
   background: var(--page);
   color: var(--col2);
   border-color: var(--col2);

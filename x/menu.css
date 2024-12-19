@@ -29,6 +29,13 @@
       margin: 0;
       padding: calc(var(--fixedspace) / 4) calc(var(--fixedspace) / 2);
     }
+
+    & .current {
+      background-color: var(--page);
+      color: var(--text);
+      cursor: default;
+      transform: translatex(var(--fixedspace));
+    }
   }
 }
 
@@ -51,6 +58,10 @@
 
       & h2 {
         display: none;
+      }
+
+      & .current {
+        transform: translatex(0);
       }
 
       & menu-item {
