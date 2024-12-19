@@ -39,7 +39,7 @@
   }
 }
 
-@container sidebar (width>25em)  {
+@container sidebar (width>20em)  {
   :host {
 
     & div {
