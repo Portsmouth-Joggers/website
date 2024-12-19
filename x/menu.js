@@ -48,7 +48,6 @@ class JsonMenu extends HTMLElement {
     `;
 
     const div = document.createElement('div');
-    this.shadowRoot.append(div);
     for (const section of data) {
       const nav = document.createElement('nav');
       const h2 = document.createElement('h2');
@@ -67,6 +66,8 @@ class JsonMenu extends HTMLElement {
 
       div.append(nav);
     }
+    this.shadowRoot.append(div);
+
   }
 }
 
