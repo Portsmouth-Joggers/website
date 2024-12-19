@@ -5,8 +5,8 @@
   padding: calc(var(--fixedspace) / 4) calc(var(--fixedspace) / 2);;
   text-decoration: none;
   background: var(--col2);
-  color: var(--page);
-  border: var(--page) solid thin;
+  color: var(--sidemenu-text);
+  border: var(--sidemenu-text) solid thin;
   border-radius: calc(var(--fixedspace) / 4);
   transition: filter 0.1s;
 }
@@ -14,7 +14,7 @@
 /* only hover if the :host does not have the current class */
 :host(:not(.current):hover) {
   background: var(--page);
-  color: var(--col2);
+  color: var(--textinv);
   border-color: var(--col2);
 }
 

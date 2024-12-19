@@ -23,19 +23,19 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bgcol: #222;
-    --col1: hsl(70, 0%, 28%);
-    --col2: #333;
-    --col1light: hsl(70, 0%, 30%);
+    --col1: hsl(0, 0%, 71%);
+    --col2: #125;
+    --col1light: #333;
     --col2light: #FECB00;
 
     --page: var(--bgcol);
     --text: #EEE;
-    --textinv: #333;
+    --textinv: #999;
     --link: var(--col2light);
     --vlink: var(--text);
 
     --headertext: var(--col2light);
-    --sidemenu-text: var(--text);
+    --sidemenu-text: #CCC;
     --figure-shadow: black;
     --figure-text: var(--col2light);;
   }

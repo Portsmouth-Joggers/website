@@ -33,6 +33,7 @@
     & .current {
       background-color: var(--page);
       color: var(--text);
+      border-color: transparent;
       cursor: default;
       transform: translatex(var(--fixedspace));
     }
