@@ -7,8 +7,8 @@
 <script src="/x/menu.js" type="module" defer></script>
 
 <link rel="canonical" href="https://pjc.org.uk/races/">
-<title>PJC Races</title>
-<meta name="description" content="Details of races organised by Portsmouth Joggers.">
+<title>Races &amp; Events</title>
+<meta name="description" content="Details of races organized by Portsmouth Joggers.">
 
 <style>
   iframe {
@@ -20,6 +20,49 @@
   figure {
     margin-block-start: 1em;
   }
+
+  table {
+    border-radius: var(--curve);
+    border-collapse: collapse;
+    border: thin solid black;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: var(--shadow);
+
+    /* align everything left */
+    & th,
+    & td {
+      text-align: left;
+      height: 2rem;
+      padding-left: 1rem;
+    }
+
+    /* the first column is right aligned */
+    & :is(th, td):first-child {
+      width: 15ch;
+      text-align: right;
+    }
+
+    /* make the background of the header row different */
+    & th {
+      margin-left: 1em;
+      background-color: var(--col1);
+      color: var(--text);
+    }
+
+    /* alternate row colours to avoid the need for borders */
+    & tr:nth-child(odd) {
+      background-color: var(--page);
+    }
+
+    & tr:nth-child(even) {
+      background-color: var(--textinv);
+    }
+
+    & tr a {
+      background-color: inherit;
+    }
+  }
 </style>
 
 <header>
@@ -30,15 +73,102 @@
 
 <main>
   <article>
+    <h1>Races & Events</h1>
+    <section>
+      <h2>Our Races</h2>
+      <p>The annual races we organize are:
+      <ol>
+        <li><a href="./p2p/">The Pub-to-Pub Run</a></li>
+        <li><a href="./pl5/">The Purbrook Ladies 5</a></li>
+        <li><a href="./sxc/">The Summer Cross Country</a></li>
+      </ol>
 
-    <h1>Our Races</h1>
+    </section>
 
-    <p>We organise several races per year, these are:
-    <ol>
-      <li><a href="./p2p/">The Pub-to-Pub Run</a></li>
-      <li><a href="./pl5/">The Purbrook Ladies 5</a></li>
-      <li><a href="./sxc/">The Summer Cross Country</a></li>
-    </ol>
+    <section>
+
+      <h2>Upcoming Races & Events</h2>
+
+      <p>
+        We regularly attend races & other events in Portsmouth, around Hampshire, and further afield.  These are the events where we're
+        planning on attending or have recently attended.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Race</th>
+            <th>organizer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1st Dec 2024</td>
+            <td><a href="https://register.enthuse.com/ps/event/The78thVictory5Mile2024">Victory 5 mile</a></td>
+            <td><a href="https://hrrl.co.uk/">HRRL</a></td>
+          </tr>
+          <tr>
+            <td>15th Dec 2024</td>
+            <td><a href="https://www.southerncrosscountryleague.co.uk/lordwandsworth.aspx">Lord Wandsworth College</a></td>
+            <td><a href="https://www.southerncrosscountryleague.co.uk/">SCCL</a></td>
+          </tr>
+
+          <tr>
+            <td>27th Dec 2024</td>
+            <td><a href="/races/p2p/">Pub2Pub</a></td>
+            <td><a href="/races/p2p/">PJC</a></td>
+          </tr>
+
+          <tr>
+            <td>29th Dec 2024</td>
+            <td><a href="https://www.southerncrosscountryleague.co.uk/aliceholt.aspx">Alice Holt</a></td>
+            <td><a href="https://www.southerncrosscountryleague.co.uk/">SCCL</a></td>
+          </tr>
+          <tr>
+            <td>12th Jan 2025</td>
+            <td><a href="https://www.stubbingtongreenrunners.net/stubbington-10k/">Stubbington 10k</a></td>
+            <td><a href="https://hrrl.co.uk/">HRRL</a></td>
+          </tr>
+          <tr>
+            <td>19th Jan 2025</td>
+            <td><a href="https://www.southerncrosscountryleague.co.uk/chawtonhouse.aspx">Chawton House</a></td>
+            <td><a href="https://www.southerncrosscountryleague.co.uk/">SCCL</a></td>
+          </tr>
+          <tr>
+            <td>2nd Feb 2025</td>
+            <td><a href="https://www.rydeharriers.co.uk/races/the-ryde-10-mile-road-race/">Ryde 10 mile</a></td>
+            <td><a href="https://hrrl.co.uk/">HRRL</a></td>
+          </tr>
+          <tr>
+            <td>6th Apr 2025</td>
+            <td><a href="https://www.salisbury-arc.org/salisbury-10">Salisbury 10 mile</a></td>
+            <td><a href="https://hrrl.co.uk/">HRRL</a></td>
+          </tr>
+          <tr>
+            <td>11th May 2025</td>
+            <td><a href="https://alresford-rotary.org/10k-race/">Alresford 10k</a></td>
+            <td><a href="https://hrrl.co.uk/">HRRL</a></td>
+          </tr>
+          <tr>
+            <td>6th Jul 2025</td>
+            <td><a href="https://www.lordshillroadrunners.org.uk/races/lordshill-10k/">Lordshill 10k</a></td>
+            <td><a href="https://hrrl.co.uk/">HRRL</a></td>
+          </tr>
+          <tr>
+            <td>Summer 2025</td>
+            <td><a href="./pl5/">Purbrook Ladies 5</a></td>
+            <td><a href="./pl5/">PJC</a></td>
+          </tr>
+          <tr>
+            <td>Summer 2025</td>
+            <td><a href="./sxc/">Summer Cross Country</a></td>
+            <td><a href="./sxc/">PJC</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
   </article>
 </main>
 <footer>

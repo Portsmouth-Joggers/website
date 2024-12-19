@@ -195,6 +195,11 @@ json-menu {
   grid-auto-flow: var(--gridwrap);
   align-items: start;
   gap: 1em;
+  grid-template-columns: 1fr 1fr;
+}
+
+.three-columns {
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .cards {
