@@ -44,19 +44,19 @@
     "title": "Social Media",
     "items": [
       {
+        "text": "Instagram",
+        "href": "https://www.instagram.com/portsmouthjoggers/",
+        "icon": "/x/logo-ig.svg"
+      },
+      {
         "text": "Facebook",
         "href": "https://www.facebook.com/groups/129643517173916",
         "icon": "/x/logo-fb.svg"
       },
       {
-        "text": "Members Area",
+        "text": "Members",
         "href": "https://www.facebook.com/groups/786928831462848",
         "icon": "/x/logo-fb.svg"
-      },
-      {
-        "text": "Instagram",
-        "href": "https://www.instagram.com/portsmouthjoggers/",
-        "icon": "/x/logo-ig.svg"
       }
     ]
   }

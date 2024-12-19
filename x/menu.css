@@ -1,22 +1,20 @@
 :host {
-
-  --direction: column;
-
   container-type: inline-size;
   container-name: sidebar;
 
-  flex-wrap: nowrap;
-
   & div {
+    display: flex;
+    flex-wrap: nowrap;
+    --direction: column;
+    flex-direction: var(--direction);
+    gap: var(--fixedspace);
+    flex: 1 1 auto;
+
     background-color: var(--col1light);
     border-radius: calc(var(--fixedspace) / 4);
     padding: calc( var(--fixedspace) / 4);
-    display: flex;
-    flex-direction: var(--direction);
     justify-content: space-evenly;
-    gap: var(--fixedspace);
 
-    flex-wrap: nowrap;
 
     & nav {
       display: flex;
@@ -30,43 +28,34 @@
       font-size: 1rem;
       margin: 0;
       padding: calc(var(--fixedspace) / 4) calc(var(--fixedspace) / 2);
-      min-width: 4em;
     }
-
   }
-
 }
 
-@container sidebar (width>20em)  {
+@container sidebar (width>25em)  {
   :host {
 
     & div {
-
-      flex-direction: row;
-      background-color: red !important;
-
-      &>nav:first-of-type {
-        background-color: pink !important;
-        max-width: min-content;
-      }
-
-      &>nav:not(:first-of-type) {
-        background-color: green !important;
-        max-width: 40em;
-      }
+      --direction: row;
+      background-color: var(--col2);
+      gap: calc(var(--fixedspace)*2);
+      padding: var(--fixedspace);
+      border-radius: 0;
 
       & nav {
         display: flex;
         flex-direction: row;
-        gap: calc(var(--fixedspace) / 2);
-        flex-shrink: 1;
-        width: min-content;
+        gap: var(--fixedspace);
+        flex: 1 1 auto; /* Allow items to grow and shrink */
       }
 
       & h2 {
         display: none;
       }
 
+      & menu-item {
+        flex: 1 1 auto; /* Allow items to grow and shrink */
+      } 
     }
   }
 } 
