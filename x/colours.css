@@ -25,8 +25,8 @@
     --bgcol: #222;
     --col1: hsl(0, 0%, 71%);
     --col2: #125;
-    --col1light: #333;
     --col2light: #FECB00;
+    --col1light: #249;
 
     --page: var(--bgcol);
     --text: #EEE;
@@ -34,7 +34,7 @@
     --link: var(--col2light);
     --vlink: var(--text);
 
-    --headertext: var(--col2light);
+    --headertext: var(--text);
     --sidemenu-text: #CCC;
     --figure-shadow: black;
     --figure-text: var(--col2light);;

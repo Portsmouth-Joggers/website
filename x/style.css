@@ -1,264 +1,280 @@
 * {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 :root {
-  overflow-y: scroll;
+    overflow-y: scroll;
 }
 
 body {
-  display: grid;
-  grid-template-columns: var(--gridcols);
-  grid-template-rows: var(--gridrows);
-  grid-template-areas: var(--gridtemplateareas);
-  gap: var(--gap);
+    display: grid;
+    grid-template-columns: var(--gridcols);
+    grid-template-rows: var(--gridrows);
+    grid-template-areas: var(--gridtemplateareas);
+    gap: var(--gap);
 
-  background-color: var(--bgcol);
-  color: var(--text);
-  font-family: sans-serif;
-  margin: 0 auto;
+    background-color: var(--bgcol);
+    color: var(--text);
+    font-family: sans-serif;
+    margin: 0 auto;
 
-  padding: var(--padding);
-  min-height: 100dvh;
-  max-width: 60em;
+    padding: var(--padding);
+    min-height: 100dvh;
+    max-width: 60em;
 }
 
 a {
-  background: var(--page);
-  border-radius: var(--buttoncurve);
-  color: var(--link);
-  text-decoration: none;
-  margin-left: -0.25em;
-  margin-right: -0.25em;
-  padding-left: 0.25em;
-  padding-right: 0.25em;
+    background: var(--page);
+    border-radius: var(--buttoncurve);
+    color: var(--link);
+    text-decoration: none;
+    margin-left: -0.25em;
+    margin-right: -0.25em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
 
-  &:hover {
-    background-color: var(--col2);
-    color: var(--page);
-  }
+    &:hover {
+        background-color: var(--col2);
+        color: var(--page);
+    }
 }
 
 :is(h1, h2, h3, h4, h5, h6) a {
-  display: none;
+    display: none;
 }
 
 header {
-  grid-area: header;
-  display: grid;
-  grid-template-columns: var(--headergridcols);
-  grid-template-rows: var(--headergridrows);
-  grid-template-areas: var(--headergridtemplateareas);
+    grid-area: header;
+    display: grid;
+    grid-template-columns: var(--headergridcols);
+    grid-template-rows: var(--headergridrows);
+    grid-template-areas: var(--headergridtemplateareas);
 
-  margin: 0;
-  padding: var(--fixedspace);
-  border-radius: var(--curve);
-
-  background-color: var(--col2);
-  color: var(--textinv);
-  align-items: center;
-  gap: var(--fixedspace);
-
-  container-type: inline-size;
-
-  & * {
     margin: 0;
-    padding: 0;
-    color: var(--headertext);
-    background: var(--col2);
-    text-decoration: none;
-    display: block;
-  }
+    padding: var(--fixedspace);
+    border-radius: var(--curve);
 
-  & #masthead {
-    grid-area: logo;
-  }
+    background-color: var(--col2);
+    color: var(--textinv);
+    align-items: center;
+    gap: var(--fixedspace);
 
-  &>p.banner {
-    grid-area: h1;
-    font-size: var(--header-font-size);
-    font-weight: bold;
-    justify-content: space-around;
-  }
+    container-type: inline-size;
 
-  & p.tagline {
-    grid-area: text;
-    display: var(--showhide);
-    margin-top: -8cqw;
-    margin-inline-start: 0.20em;
-    background: none;
-    opacity: 0.4;
-  }
+    & * {
+        margin: 0;
+        padding: 0;
+        color: var(--headertext);
+        background: var(--col2);
+        text-decoration: none;
+        display: block;
+    }
 
-  & img {
-    display: var(--showhide);
-    width: calc(2* var(--header-font-size));
-  }
+    & #masthead {
+        grid-area: logo;
+    }
 
-  & a:hover {
-    color: var(--text);
-  }
+    & > p.banner {
+        grid-area: h1;
+        font-size: var(--header-font-size);
+        font-weight: bold;
+        justify-content: space-around;
+    }
+
+    & p.tagline {
+        grid-area: text;
+        display: var(--showhide);
+        margin-top: -8cqw;
+        margin-inline-start: 0.2em;
+        background: none;
+        opacity: 0.4;
+    }
+
+    & img {
+        display: var(--showhide);
+        width: calc(2 * var(--header-font-size));
+    }
+
+    & a:hover {
+        color: var(--text);
+    }
 }
 
 footer {
-  grid-area: footer;
-  background-color: var(--col1light);
-  border-radius: var(--curve);
-  color: var(--text);
-  line-height: var(--lineheight);
-  padding: var(--fixedspace);
-  margin: 0 0 var(--footerspace) 0;
+    grid-area: footer;
+    background-color: var(--col1light);
+    border-radius: var(--curve);
+    color: var(--text);
+    line-height: var(--lineheight);
+    padding: var(--fixedspace);
+    margin: 0 0 var(--footerspace) 0;
 
-  & p {
-    margin: 0;
-    padding: 0;
-  }
+    & p {
+        margin: 0;
+        padding: 0;
+    }
 
-  & a,
-  & a:visited {
-    border: var(--page) solid thin;
-    color: var(--page);
-    background: var(--col2);
-    text-decoration: none;
-  }
+    & a,
+    & a:visited {
+        border: var(--page) solid thin;
+        color: var(--page);
+        background: var(--col2);
+        text-decoration: none;
+    }
 
-  & a:hover {
-    background: var(--page);
-    color: var(--col2);
-    border: var(--col2) solid thin;
-  }
+    & a:hover {
+        background: var(--page);
+        color: var(--col2);
+        border: var(--col2) solid thin;
+    }
 }
 
 main {
-  background-color: var(--page);
-  color: var(--text);
-  display: contents;
-  margin: var(--fixedspace);
-  position: relative;
-
-  & h1 { color: var(--text); font-size: 1.6em; }
-  & h2 { color: var(--text); font-size: 1.45em; }
-  & h3 { color: var(--text); font-size: 1.3em; }
-  & h4 { color: var(--text); font-size: 1.2em; }
-  & h5 { color: var(--text); font-size: 1.1em; }
-  & h6 { color: var(--text); font-size: 1em; }
-
-  &>article {
-    padding: var(--article-pad);
-    grid-area: article;
-    line-height: var(--lineheight);
-
-    & section {
-      clear: both;
-    }
-  }
-
-  &>article>h1 {
+    background-color: var(--page);
     color: var(--text);
-    line-height: 1em;
-    margin: 0;
-  }
+    display: contents;
+    margin: var(--fixedspace);
+    position: relative;
 
-  &>article img {
-    max-width: 100%;
-    border-radius: var(--curve);
-    height: auto;
-  }
+    & h1 {
+        color: var(--text);
+        font-size: 1.6em;
+    }
+    & h2 {
+        color: var(--text);
+        font-size: 1.45em;
+    }
+    & h3 {
+        color: var(--text);
+        font-size: 1.3em;
+    }
+    & h4 {
+        color: var(--text);
+        font-size: 1.2em;
+    }
+    & h5 {
+        color: var(--text);
+        font-size: 1.1em;
+    }
+    & h6 {
+        color: var(--text);
+        font-size: 1em;
+    }
 
-  & .menu a {
-    display: inline-block;
-    vertical-align: top;
-  }
+    & > article {
+        padding: var(--article-pad);
+        grid-area: article;
+        line-height: var(--lineheight);
 
-  & a {
-    text-decoration: underline;
-  }
+        & section {
+            clear: both;
+        }
+    }
 
-  /* Balance the text on only the last paragrah on the page 
+    & > article > h1 {
+        color: var(--text);
+        line-height: 1em;
+        margin: 0;
+    }
+
+    & > article img {
+        max-width: 100%;
+        border-radius: var(--curve);
+        height: auto;
+    }
+
+    & .menu a {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    & a {
+        text-decoration: underline;
+    }
+
+    /* Balance the text on only the last paragrah on the page
    * it's either a direct child of an article, or a child of
    * a section
    */
-  & :is(article, section:last-child)>p:last-child:not(p:first-child) {
-    text-wrap: balance;
-  }
-
+    & :is(article, section:last-child) > p:last-child:not(p:first-child) {
+        text-wrap: balance;
+    }
 }
 
 json-menu {
-  grid-area: sidemenu;
-  align-self: start;
+    view-transition-name: --menu;
+    grid-area: sidemenu;
+    align-self: start;
 }
 
 .sidebyside {
-  display: grid;
-  grid-auto-flow: var(--gridwrap);
-  align-items: start;
-  gap: 1em;
-  grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-auto-flow: var(--gridwrap);
+    align-items: start;
+    gap: 1em;
+    grid-template-columns: 1fr 1fr;
 }
 
 .three-columns {
-  grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .cards {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: start;
-  gap: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 1em;
 
-  & * {
-    flex: 1 1 0;
-    min-width: 20em;
-  }
+    & * {
+        flex: 1 1 0;
+        min-width: 20em;
+    }
 }
 
 figure {
-  display: grid;
-  align-self: flex-start;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  gap: 0em;
-  background: var(--col2);
-  color: var(--figure-text);
-  border-radius: calc(var(--curve) * 2);
-  box-shadow: 0 0.5em 1em var(--figure-shadow);
-  margin: 0;
+    display: grid;
+    align-self: flex-start;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0em;
+    background: var(--col2);
+    color: var(--figure-text);
+    border-radius: calc(var(--curve) * 2);
+    box-shadow: 0 0.5em 1em var(--figure-shadow);
+    margin: 0;
 
-  &>figcaption {
-    padding: 0.25em 0.5em;
-  }
-  
-  &>figcaption a {
-    background: var(--col1light);
-    color: var(--text);
-  }
+    & > figcaption {
+        padding: 0.25em 0.5em;
+    }
+
+    & > figcaption a {
+        background: var(--col1light);
+        color: var(--text);
+    }
 }
 
 .actionButton {
-  float: right;
-  background-color: var(--col2);
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  font-size: 2em;
-  font-weight: bold;
-  margin: 1em;
-  border-radius: 0.5em;
-  padding: 0.5em;
-  box-shadow: 0 0.2em 0.3em rgba(0, 0, 0, 0.5);
-  width: 8rem;
-  line-height: 1em;
-  transform: rotateZ(5deg);
-  transition: all 0.5s;
+    float: right;
+    background-color: var(--col2);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 1em;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    box-shadow: 0 0.2em 0.3em rgba(0, 0, 0, 0.5);
+    width: 8rem;
+    line-height: 1em;
+    transform: rotateZ(5deg);
+    transition: all 0.5s;
 
-  &:hover {
-    transform: rotateZ(0deg) scale(1.05);
-    box-shadow: 0 0.4em 0.5em rgba(0, 0, 0, 0.75);
-    color: var(--col1)
-  }
-  
+    &:hover {
+        transform: rotateZ(0deg) scale(1.05);
+        box-shadow: 0 0.4em 0.5em rgba(0, 0, 0, 0.75);
+        color: var(--col1);
+    }
 }
-

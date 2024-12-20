@@ -1,14 +1,69 @@
+:root {
+    --speed: 0.3s;
+}
+
 :target :is(h1, h2, h3):first-of-type {
-  animation: 0.35s attention 3;
+    animation: 0.35s attention 3;
 }
 
 @keyframes attention {
-  0%, 100% {
-    filter: invert(0) blur(0px);
-  }
+    0%,
+    100% {
+        filter: invert(0) blur(0px);
+    }
 
-  50% {
-    filter: invert(1) blur(5px);
-  }
+    50% {
+        filter: invert(1) blur(5px);
+    }
+}
 
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-group(--article) {
+    animation-duration: 0.5s;
+}
+
+/* Create a custom animation */
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        filter: blur(0px);
+    }
+    100% {
+        opacity: 0;
+        filter: blur(20px);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        filter: blur(20px);
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+/* Apply the custom animation to the old and new page states */
+
+::view-transition-old(--article, --menu) {
+    animation: var(--speed) ease-in-out both fade-out;
+}
+
+::view-transition-new(--article, --menu) {
+    animation: var(--speed) ease-in-out both fade-in;
+}
+
+article {
+    transform-origin: left;
+    view-transition-name: --article;
+}
+
+.current {
+    view-transition-name: --menu;
 }
