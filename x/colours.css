@@ -10,20 +10,21 @@
   --midgrey: #ccc;
   --textinv: #eee;
   --bgcol: var(--page);
+  --bgcol2: #dadada;
   --link: var(--col2);
   --vlink: var(--col1);
 
   --headertext: var(--page);
   --sidemenu-text: var(--page);
   --figure-shadow: #4447;
-  --textinv: var(--col2);
   --shadow: 0 0.5em 1em var(--figure-shadow);
-  --figure-text: var(--textinv);;
+  --figure-text: var(--page);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --bgcol: #222;
+    --bgcol2: #334;
     --col1: hsl(0, 0%, 71%);
     --col2: #125;
     --col2light: #FECB00;
