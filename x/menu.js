@@ -110,12 +110,6 @@ class MenuItem extends HTMLElement {
 
   connectedCallback() {
     this.render();
-    this.addEventListener('click', () => {
-      const href = this.getAttribute('href');
-      if (href) {
-        window.location.href = href;
-      }
-    });
   }
 
   async fetchSvg(icon) {
@@ -137,8 +131,7 @@ class MenuItem extends HTMLElement {
       <style>
         @import url('${menuItemStyleUrl}');
       </style>
-      ${icon ? iconSvg : ''}
-      <span>${text}</span>
+      <a href="${href}">${icon ? iconSvg : ''} ${text}</a>
     `;
   }
 }

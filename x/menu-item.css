@@ -9,6 +9,12 @@
   border: var(--sidemenu-text) solid thin;
   border-radius: calc(var(--fixedspace) / 4);
   transition: filter 0.1s;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    width: 100%;
+  }
 }
   
 /* only hover if the :host does not have the current class */
