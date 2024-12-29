@@ -14,7 +14,7 @@
 /* only hover if the :host does not have the current class */
 :host(:not(.current):hover) {
   background: var(--page);
-  color: var(--textinv);
+  color: var(--text);
   border-color: var(--col2);
 }
 

@@ -2,7 +2,7 @@
   --col1: #FECB00;
   --col1light: #FDDB6F;
   --col2: #0038A6;
-  --col2light: ##ABBDE1;
+  --col2light: #ABBDE1;
   --col2dark: hsla(20, 85%, 32%, 50%);
   --page: #fdfdfd;
   --text: #222222;
@@ -16,6 +16,7 @@
   --headertext: var(--page);
   --sidemenu-text: var(--page);
   --figure-shadow: #4447;
+  --textinv: var(--col2);
   --shadow: 0 0.5em 1em var(--figure-shadow);
   --figure-text: var(--textinv);;
 }
