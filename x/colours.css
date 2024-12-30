@@ -15,7 +15,11 @@
   --vlink: var(--col1);
 
   --headertext: var(--page);
+  --sidemenu-bg: var(--col2);
   --sidemenu-text: var(--page);
+  --sidemenu-current-bg: var(--page);
+  --sidemenu-current-text: var(--text);
+
   --figure-shadow: #4447;
   --shadow: 0 0.5em 1em var(--figure-shadow);
   --figure-text: var(--page);
@@ -37,7 +41,12 @@
     --vlink: var(--text);
 
     --headertext: var(--text);
+
+    --sidemenu-bg: var(--col2);
     --sidemenu-text: #CCC;
+    --sidemenu-current-bg: var(--text);
+    --sidemenu-current-text: var(--bgcol);
+
     --figure-shadow: black;
     --figure-text: var(--col2light);;
   }
