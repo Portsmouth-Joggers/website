@@ -1,8 +1,6 @@
 const url = new URL(import.meta.url, window.location);
 const folder = url.pathname.split('/').slice(0, -1).join('/');
 const styleUrl = `${folder}/menu.css`;
-const menuItemStyleUrl = `${folder}/menu-item.css`;
-
 
 class JsonMenu extends HTMLElement {
   constructor() {
@@ -74,72 +72,26 @@ class JsonMenu extends HTMLElement {
       nav.append(h2);
 
       for (const item of section.items) {
-        const menuItem = document.createElement('menu-item');
-        menuItem.setAttribute('text', item.text);
-        menuItem.setAttribute('href', item.href);
+        const anchor = document.createElement('a');
+        anchor.textContent = item.text;
+        anchor.setAttribute('href', item.href);
         if (item.icon) {
-          menuItem.setAttribute('icon', item.icon);
+          const img = document.createElement('img');
+          img.setAttribute('src', item.icon);
+          img.setAttribute('alt', 'icon');
+          img.classList.add('icon');
+          anchor.prepend(img);
         }
 
-        this.highlightCurrent(menuItem, currentUrl);
+        this.highlightCurrent(anchor, currentUrl);
 
-        nav.append(menuItem);
+        nav.append(anchor);
       }
 
       div.append(nav);
     }
     this.shadowRoot.append(div);
 
-  }
-}
-
-
-class MenuItem extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-  }
-
-  static get observedAttributes() {
-    return ['text', 'href', 'icon'];
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    this.render();
-  }
-
-  connectedCallback() {
-    this.render();
-    this.addEventListener('click', () => {
-      const href = this.getAttribute('href');
-      if (href) {
-        window.location.href = href;
-      }
-    });
-  }
-
-  async fetchSvg(icon) {
-    const response = await fetch(icon);
-    return await response.text();
-  }
-
-  async render() {
-    const text = this.getAttribute('text') || '';
-    const href = this.getAttribute('href') || '#';
-    const icon = this.getAttribute('icon') || '';
-
-    let iconSvg = '';
-    if (icon) {
-      iconSvg = await this.fetchSvg(icon);
-    }
-
-    this.shadowRoot.innerHTML = `
-      <style>
-        @import url('${menuItemStyleUrl}');
-      </style>
-      ${icon ? iconSvg : ''}
-      <span>${text}</span>
-    `;
   }
 }
 
@@ -155,7 +107,6 @@ function initMenu() {
 
 
 customElements.define('json-menu', JsonMenu);
-customElements.define('menu-item', MenuItem);
 
 // auto inject the menu on page load
 window.addEventListener('DOMContentLoaded', initMenu);
