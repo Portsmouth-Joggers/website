@@ -220,6 +220,10 @@ json-menu {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.four-columns {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 .cards {
     display: flex;
     flex-direction: row;
