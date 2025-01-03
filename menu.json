@@ -3,7 +3,7 @@
     "title": "Menu",
     "items": [
       {
-        "text": "About us",
+        "text": "About Us",
         "href": "/"
       },
       {
@@ -31,7 +31,7 @@
         "href": "/committee/"
       },
       {
-        "text": "Join us",
+        "text": "Join Us",
         "href": "/join/"
       }
     ]
