@@ -282,3 +282,28 @@ figure {
         color: var(--col1);
     }
 }
+
+
+.contactButton {
+    float: right;
+    background-color: var(--col2);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 1em;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    box-shadow: 0 0.2em 0.3em rgba(0, 0, 0, 0.5);
+    width: 8rem;
+    line-height: 1em;
+    transform: rotateZ(5deg);
+    transition: all 0.5s;
+
+    &:hover {
+        transform: rotateZ(0deg) scale(1.05);
+        box-shadow: 0 0.4em 0.5em rgba(0, 0, 0, 0.75);
+        color: var(--col1);
+    }
+}
