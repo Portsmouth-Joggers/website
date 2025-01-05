@@ -1,5 +1,8 @@
-const url = new URL(import.meta.url, window.location);
-const folder = url.pathname.split('/').slice(0, -1).join('/');
+// this commented code works on 'newer' browsers, but to cope with
+// folks who have obsoluete hardware we need to hard code the folder 
+// const url = new URL(import.meta.url, window.location);
+// const folder = url.pathname.split('/').slice(0, -1).join('/');
+const folder = '/x';
 const styleUrl = `${folder}/menu.css`;
 
 class JsonMenu extends HTMLElement {
