@@ -92,7 +92,7 @@ header {
 
     & img {
         display: var(--showhide);
-        width: calc(2 * var(--header-font-size));
+        height: 100%;
     }
 
     & a:hover {
@@ -199,12 +199,6 @@ main {
     & :is(article, section:last-child) > p:last-child:not(p:first-child) {
         text-wrap: balance;
     }
-}
-
-.menu {
-    view-transition-name: --menu;
-    grid-area: sidemenu;
-    align-self: start;
 }
 
 .sidebyside {

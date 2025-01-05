@@ -1,92 +1,88 @@
 .menu {
-    container-type: inline-size;
-    container-name: sidebar;
 
-    & div {
+    view-transition-name: --menu;
+    grid-area: sidemenu;
+    align-self: start;
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex: 1 0 auto;
+
+    justify-content: space-evenly;
+
+    --direction: row;
+    background-color: var(--col2);
+    gap: calc(var(--fixedspace) * 2);
+    padding: var(--fixedspace);
+    border-radius: 0;
+
+    & nav {
         display: flex;
-        flex-wrap: nowrap;
+        flex-direction: var(--direction);
+        flex-wrap: wrap;
+        gap: var(--fixedspace);
+        flex: 1 1 auto;
+    }
+
+    & a {
+        display: flex;
+        flex: 1 1 auto;
+        align-items: center;
+        padding: calc(var(--fixedspace) / 4) calc(var(--fixedspace) / 2);
+        ;
+        text-decoration: none;
+        background: var(--sidemenu-bg);
+        color: var(--sidemenu-text);
+        border: var(--sidemenu-text) solid thin;
+        border-radius: calc(var(--fixedspace) / 4);
+        transition: filter 0.1s;
+
+        &:hover {
+            color: var(--sidemenu-current-text);
+            background: var(--sidemenu-current-bg);
+        }
+
+        & img {
+            color: var(--sidemenu-text);
+            margin-right: calc(var(--fixedspace) / 4);
+            width: 1rem;
+            filter: invert();
+        }
+
+    }
+
+    & h2 {
+        display: none;
+    }
+
+    & .current {
+        background-color: var(--sidemenu-current-bg);
+        color: var(--sidemenu-current-text);
+        border-color: transparent;
+        cursor: default;
+    }
+}
+
+@media (width > 40rem) {
+    .menu {
         --direction: column;
         flex-direction: var(--direction);
         gap: var(--fixedspace);
-        flex: 1 0 auto;
-
         background-color: var(--col1light);
         border-radius: calc(var(--fixedspace) / 4);
         padding: calc(var(--fixedspace) / 2);
-        justify-content: space-evenly;
-        
+
         & nav {
-            display: flex;
-            flex-direction: var(--direction);
             gap: calc(var(--fixedspace) / 2);
-            flex-wrap: wrap;
+            flex: 1 1 auto;
+            /* Allow items to grow and shrink */
         }
 
-        & a {
-            display: flex;
-            flex: 1 1 auto;
-            align-items: center;
-            padding: calc(var(--fixedspace) / 4) calc(var(--fixedspace) / 2);;
-            text-decoration: none;
-            background: var(--sidemenu-bg);
-            color: var(--sidemenu-text);
-            border: var(--sidemenu-text) solid thin;
-            border-radius: calc(var(--fixedspace) / 4);
-            transition: filter 0.1s;
-
-            &:hover {
-                color: var(--sidemenu-current-text);
-                background: var(--sidemenu-current-bg);                   
-            }
-
-            & img {
-                color: var(--sidemenu-text);
-                margin-right: calc(var(--fixedspace) / 4);
-                width: 1rem;
-                filter: invert();
-            }
-    
-        }          
-          
         & h2 {
             display: inline-block;
             font-size: 1rem;
             margin: 0;
             padding: calc(var(--fixedspace) / 4) calc(var(--fixedspace) / 2);
-        }
-
-        & .current {
-            background-color: var(--sidemenu-current-bg);
-            color: var(--sidemenu-current-text);
-            border-color: transparent;
-            cursor: default;
-        }
-    }
-}
-
-@container (width>20em) {
-    .menu {
-        & div {
-            --direction: row;
-            background-color: var(--col2);
-            gap: calc(var(--fixedspace) * 2);
-            padding: var(--fixedspace);
-            border-radius: 0;
-
-            & nav {
-                display: flex;
-                flex-direction: row;
-                gap: var(--fixedspace);
-                flex: 1 1 auto; /* Allow items to grow and shrink */
-            }
-
-            & h2 {
-                display: none;
-            }
-
-            & menu-item {
-                flex: 1 1 auto; /* Allow items to grow and shrink */
-            }
         }
     }
 }

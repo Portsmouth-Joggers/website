@@ -31,7 +31,6 @@ function renderMenu(data) {
   }
 
   const nav = document.createElement('nav');
-  const div = document.createElement('div');
 
   for (const section of data) {
     const sectionNav = document.createElement('nav');
@@ -56,10 +55,9 @@ function renderMenu(data) {
       sectionNav.append(anchor);
     }
 
-    div.append(sectionNav);
+    nav.append(sectionNav);
   }
 
-  nav.append(div);
   nav.classList.add('menu');
   document.body.prepend(nav);
 }
