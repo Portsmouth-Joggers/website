@@ -1,8 +1,5 @@
-// this commented code works on 'newer' browsers, but to cope with
-// folks who have obsoluete hardware we need to hard code the folder 
-// const url = new URL(import.meta.url, window.location);
-// const folder = url.pathname.split('/').slice(0, -1).join('/');
-const folder = '/x';
+const url = new URL(import.meta.url, window.location);
+const folder = url.pathname.split('/').slice(0, -1).join('/');
 const styleUrl = `${folder}/menu.css`;
 
 class JsonMenu extends HTMLElement {
@@ -38,6 +35,19 @@ class JsonMenu extends HTMLElement {
     }
   }
 
+  async loadCSS(url) {
+    try {
+      const response = await fetch(url);
+      const css = await response.text();
+      const style = document.createElement('style');
+      style.textContent = css;
+      this.shadowRoot.append(style);
+    } catch (error) {
+      console.error('Failed to load CSS:', error);
+    }
+  }
+
+
   highlightCurrent(item, currentUrl) {
     const href = item.getAttribute('href');
     const xhref = href.endsWith('/') ? href.slice(0, -1) : href;
@@ -61,11 +71,13 @@ class JsonMenu extends HTMLElement {
       currentUrl = currentUrl.slice(0, -1);
     }
 
-    this.shadowRoot.innerHTML = `
-      <style>
-        @import url('${styleUrl}');
-      </style>
-    `;
+    // this.shadowRoot.innerHTML = `
+    //   <style>
+    //     @import url('${styleUrl}');
+    //   </style>
+    // `;
+    this.shadowRoot.innerHTML = ``;
+    this.loadCSS(styleUrl);
 
     const div = document.createElement('div');
     for (const section of data) {
