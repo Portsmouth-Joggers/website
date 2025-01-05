@@ -28,40 +28,40 @@
     overflow: hidden;
     width: 100%;
     box-shadow: var(--shadow);
+  }
 
-    /* align everything left */
-    & th,
-    & td {
-      text-align: left;
-      height: 2rem;
-      padding-left: 1rem;
-    }
+  /* align everything left */
+  table th,
+  table td {
+    text-align: left;
+    height: 2rem;
+    padding-left: 1rem;
+  }
 
-    /* the first column is right aligned */
-    & :is(th, td):first-child {
-      width: 15ch;
-      text-align: right;
-    }
+  /* the first column is right aligned */
+  table :is(th, td):first-child {
+    width: 15ch;
+    text-align: right;
+  }
 
-    /* make the background of the header row different */
-    & th {
-      margin-left: 1em;
-      background-color: var(--col1);
-      color: var(--text);
-    }
+  /* make the background of the header row different */
+  table th {
+    margin-left: 1em;
+    background-color: var(--col1);
+    color: var(--text);
+  }
 
-    /* alternate row colours to avoid the need for borders */
-    & tr:nth-child(odd) {
-      background-color: var(--page);
-    }
+  /* alternate row colours to avoid the need for borders */
+  table tr:nth-child(odd) {
+    background-color: var(--page);
+  }
 
-    & tr:nth-child(even) {
-      background-color: var(--bgcol2);
-    }
+  table tr:nth-child(even) {
+    background-color: var(--bgcol2);
+  }
 
-    & tr a {
-      background-color: inherit;
-    }
+  table tr a {
+    background-color: inherit;
   }
 </style>
 

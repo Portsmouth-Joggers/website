@@ -24,7 +24,7 @@ body {
     max-width: 60em;
 }
 
-a {
+article a {
     background: var(--page);
     border-radius: var(--buttoncurve);
     color: var(--link);
@@ -33,11 +33,11 @@ a {
     margin-right: -0.25em;
     padding-left: 0.25em;
     padding-right: 0.25em;
+}
 
-    &:hover {
-        background-color: var(--col2);
-        color: var(--page);
-    }
+article a:hover {
+    background-color: var(--col2);
+    color: var(--page);
 }
 
 :is(h1, h2, h3, h4, h5, h6) a {
@@ -59,46 +59,46 @@ header {
     color: var(--textinv);
     align-items: center;
     gap: var(--fixedspace);
-
-
-    & * {
-        margin: 0;
-        padding: 0;
-        color: var(--headertext);
-        background: var(--col2);
-        text-decoration: none;
-        display: block;
-    }
-
-    & #masthead {
-        grid-area: logo;
-    }
-
-    & > p.banner {
-        grid-area: h1;
-        font-size: var(--header-font-size);
-        font-weight: bold;
-        justify-content: space-around;
-    }
-
-    & p.tagline {
-        grid-area: text;
-        display: var(--showhide);
-        margin-top: 0;
-        margin-inline-start: 0.2em;
-        background: none;
-        opacity: 0.4;
-    }
-
-    & img {
-        display: var(--showhide);
-        height: 100%;
-    }
-
-    & a:hover {
-        color: var(--text);
-    }
 }
+
+header * {
+    margin: 0;
+    padding: 0;
+    color: var(--headertext);
+    background: var(--col2);
+    text-decoration: none;
+    display: block;
+}
+
+header #masthead {
+    grid-area: logo;
+}
+
+header>p.banner {
+    grid-area: h1;
+    font-size: var(--header-font-size);
+    font-weight: bold;
+    justify-content: space-around;
+}
+
+header p.tagline {
+    grid-area: text;
+    display: var(--showhide);
+    margin-top: 0;
+    margin-inline-start: 0.2em;
+    background: none;
+    opacity: 0.4;
+}
+
+header img {
+    display: var(--showhide);
+    height: 100%;
+}
+
+header a:hover {
+    color: var(--text);
+}
+
 
 footer {
     grid-area: footer;
@@ -108,26 +108,27 @@ footer {
     line-height: var(--lineheight);
     padding: var(--fixedspace);
     margin: 0 0 var(--footerspace) 0;
-
-    & p {
-        margin: 0;
-        padding: 0;
-    }
-
-    & a,
-    & a:visited {
-        border: var(--page) solid thin;
-        color: var(--page);
-        background: var(--col2);
-        text-decoration: none;
-    }
-
-    & a:hover {
-        background: var(--page);
-        color: var(--col2);
-        border: var(--col2) solid thin;
-    }
 }
+
+footer p {
+    margin: 0;
+    padding: 0;
+}
+
+footer a,
+footer a:visited {
+    border: var(--page) solid thin;
+    color: var(--page);
+    background: var(--col2);
+    text-decoration: none;
+}
+
+footer a:hover {
+    background: var(--page);
+    color: var(--col2);
+    border: var(--col2) solid thin;
+}
+
 
 main {
     background-color: var(--page);
@@ -135,71 +136,78 @@ main {
     display: contents;
     margin: var(--fixedspace);
     position: relative;
+}
 
-    & h1 {
-        color: var(--text);
-        font-size: 1.6em;
-    }
-    & h2 {
-        color: var(--text);
-        font-size: 1.45em;
-    }
-    & h3 {
-        color: var(--text);
-        font-size: 1.3em;
-    }
-    & h4 {
-        color: var(--text);
-        font-size: 1.2em;
-    }
-    & h5 {
-        color: var(--text);
-        font-size: 1.1em;
-    }
-    & h6 {
-        color: var(--text);
-        font-size: 1em;
-    }
+main h1 {
+    color: var(--text);
+    font-size: 1.6em;
+}
 
-    & > article {
-        padding: var(--article-pad);
-        grid-area: article;
-        line-height: var(--lineheight);
+main h2 {
+    color: var(--text);
+    font-size: 1.45em;
+}
 
-        & section {
-            clear: both;
-        }
-    }
+main h3 {
+    color: var(--text);
+    font-size: 1.3em;
+}
 
-    & > article > h1 {
-        color: var(--text);
-        line-height: 1em;
-        margin: 0;
-    }
+main h4 {
+    color: var(--text);
+    font-size: 1.2em;
+}
 
-    & > article img {
-        max-width: 100%;
-        border-radius: var(--curve);
-        height: auto;
-    }
+main h5 {
+    color: var(--text);
+    font-size: 1.1em;
+}
 
-    & .menu a {
-        display: inline-block;
-        vertical-align: top;
-    }
+main h6 {
+    color: var(--text);
+    font-size: 1em;
+}
 
-    & a {
-        text-decoration: underline;
-    }
+main>article {
+    padding: var(--article-pad);
+    grid-area: article;
+    line-height: var(--lineheight);
+}
 
-    /* Balance the text on only the last paragrah on the page
+main>article section {
+    clear: both;
+}
+
+
+main>article>h1 {
+    color: var(--text);
+    line-height: 1em;
+    margin: 0;
+}
+
+main>article img {
+    max-width: 100%;
+    border-radius: var(--curve);
+    height: auto;
+}
+
+main .menu a {
+    display: inline-block;
+    vertical-align: top;
+}
+
+main a {
+    text-decoration: underline;
+}
+
+/* Balance the text on only the last paragrah on the page
    * it's either a direct child of an article, or a child of
    * a section
    */
-    & :is(article, section:last-child) > p:last-child:not(p:first-child) {
-        text-wrap: balance;
-    }
+main :is(article, section:last-child)>p:last-child:not(p:first-child) {
+    text-wrap: balance;
 }
+
 
 .sidebyside {
     display: grid;
@@ -223,12 +231,13 @@ main {
     flex-wrap: wrap;
     align-items: start;
     gap: 1em;
-
-    & * {
-        flex: 1 1 0;
-        min-width: 20em;
-    }
 }
+
+.cards * {
+    flex: 1 1 0;
+    min-width: 20em;
+}
+
 
 figure {
     display: grid;
@@ -241,15 +250,15 @@ figure {
     border-radius: calc(var(--curve) * 2);
     box-shadow: 0 0.5em 1em var(--figure-shadow);
     margin: 0;
+}
 
-    & > figcaption {
-        padding: 0.25em 0.5em;
-    }
+figure>figcaption {
+    padding: 0.25em 0.5em;
+}
 
-    & > figcaption a {
-        background: var(--col1light);
-        color: var(--text);
-    }
+figure>figcaption a {
+    background: var(--col1light);
+    color: var(--text);
 }
 
 .actionButton {
@@ -268,11 +277,10 @@ figure {
     line-height: 1em;
     transform: rotateZ(5deg);
     transition: all 0.5s;
-
-    &:hover {
-        transform: rotateZ(0deg) scale(1.05);
-        box-shadow: 0 0.4em 0.5em rgba(0, 0, 0, 0.75);
-        color: var(--col1);
-    }
 }
 
+.actionButton:hover {
+    transform: rotateZ(0deg) scale(1.05);
+    box-shadow: 0 0.4em 0.5em rgba(0, 0, 0, 0.75);
+    color: var(--col1);
+}
