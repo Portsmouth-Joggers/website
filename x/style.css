@@ -202,7 +202,7 @@ main {
     }
 }
 
-json-menu {
+.menu {
     view-transition-name: --menu;
     grid-area: sidemenu;
     align-self: start;

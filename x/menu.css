@@ -1,8 +1,4 @@
-@view-transition {
-    navigation: auto;
-}
-
-:host {
+.menu {
     container-type: inline-size;
     container-name: sidebar;
 
@@ -16,9 +12,9 @@
 
         background-color: var(--col1light);
         border-radius: calc(var(--fixedspace) / 4);
-        padding: calc(var(--fixedspace) / 4);
+        padding: calc(var(--fixedspace) / 2);
         justify-content: space-evenly;
-
+        
         & nav {
             display: flex;
             flex-direction: var(--direction);
@@ -69,7 +65,7 @@
 }
 
 @container (width>20em) {
-    :host {
+    .menu {
         & div {
             --direction: row;
             background-color: var(--col2);

@@ -17,12 +17,13 @@
     }
 }
 
+
 @view-transition {
     navigation: auto;
 }
 
 ::view-transition-group(--article) {
-    animation-duration: 0.5s;
+    animation-duration: var(--speed);
 }
 
 /* Create a custom animation */
