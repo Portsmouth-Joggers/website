@@ -60,7 +60,6 @@ header {
     align-items: center;
     gap: var(--fixedspace);
 
-    container-type: inline-size;
 
     & * {
         margin: 0;
@@ -85,7 +84,7 @@ header {
     & p.tagline {
         grid-area: text;
         display: var(--showhide);
-        margin-top: -8cqw;
+        margin-top: 0;
         margin-inline-start: 0.2em;
         background: none;
         opacity: 0.4;

@@ -46,7 +46,7 @@
 
   --article-pad: 1em;
 
-  --header-font-size: 7cqw;
+  --header-font-size: 3vw;
 
   --header-justify: flex-start;
 
@@ -88,7 +88,7 @@
 
     --showhide: block;
 
-    --header-font-size: 8cqw;
+    --header-font-size: clamp(1rem, 8vw, 4rem);
     --header-justify: center;
     --headergridtemplateareas: "logo h1" "logo text";
 
