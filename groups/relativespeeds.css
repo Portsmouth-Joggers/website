@@ -10,9 +10,8 @@
     "x pace-cadets endurance"
     "x inbetweeners inbetweeners"
     "x next-step next-step"
-    "x social social"
     "x early-birds early-birds"
-    "x c25k c25k";
+    "x social social";
   border-radius: 0.5rem;
   border: 1px solid #ccc;
   padding: 0.25rem;
@@ -57,13 +56,13 @@
 
 #--early-birds {
   grid-area: early-birds;
-  background-color: #f60;
+  background-color: #fc0;
   color: black;
 }
 
 #--social {
   grid-area: social;
-  background-color: #fc0;
+  background-color: #f60;
   color: black;
 }
 
