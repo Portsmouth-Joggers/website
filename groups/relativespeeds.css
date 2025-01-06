@@ -1,0 +1,127 @@
+#--groups-container {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto;
+  gap: 0.25rem 0.5rem;
+  grid-template-areas:
+    "x racers endurance"
+    "x pacers endurance"
+    "x pace-cadets endurance"
+    "x inbetweeners inbetweeners"
+    "x next-step next-step"
+    "x social social"
+    "x early-birds early-birds"
+    "x c25k c25k";
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  padding: 0.25rem;
+  background: linear-gradient(rgba(0, 0, 255, 0.35),
+      rgba(0, 0, 128, 0.35),
+      rgba(0, 255, 0, 0.35),
+      rgba(255, 255, 0, 0.35),
+      rgba(255, 165, 0, 0.35),
+      rgba(255, 0, 0, 0.35));
+  cursor: default;
+}
+
+#--groups-container span {
+  font-weight: bold;
+}
+
+#--groups-container a {
+  border: 1px solid #ccc;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  border-radius: 0.5rem;
+  text-decoration: none;
+}
+
+#--fastslow {
+  grid-area: x;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  min-height: 16rem;
+}
+
+#--c25k {
+  grid-area: c25k;
+  background-color: #f00;
+  color: white;
+}
+
+#--early-birds {
+  grid-area: early-birds;
+  background-color: #f60;
+  color: black;
+}
+
+#--social {
+  grid-area: social;
+  background-color: #fc0;
+  color: black;
+}
+
+#--next-step {
+  grid-area: next-step;
+  background-color: #ff0;
+  color: black;
+}
+
+#--inbetweeners {
+  grid-area: inbetweeners;
+  background-color: #0f0;
+  color: black;
+}
+
+#--pace-cadets {
+  grid-area: pace-cadets;
+  background-color: #0ff;
+  color: black;
+}
+
+#--pacers {
+  grid-area: pacers;
+  background-color: #00f;
+  color: white;
+}
+
+#--racers {
+  grid-area: racers;
+  background-color: #00C;
+  color: white;
+}
+
+#--endurance {
+  grid-area: endurance;
+  background-color: #F0C;
+  color: white;
+}
+
+#--endurance,
+#--fastslow {
+  text-orientation: sideways-right;
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+  text-align: middle;
+}
+
+
+#--groups-container a:hover {
+  filter: brightness(0.9);
+  transform: scale(1.1);
+  box-shadow: 0 0.25rem 0.25rem #444;
+  z-index: 2;
+}
+
+
+#--groups-container #--endurance:hover {
+  transform: scale(1.1) rotate(-180deg);
+  box-shadow: 0 -0.25rem 0.25rem #444;
+  z-index: 2;
+}

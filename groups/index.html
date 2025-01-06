@@ -6,16 +6,20 @@
 <link rel="icon" href="/x/logo-pj.svg">
 <script src="/x/menu.js" type="module"></script>
 
+
 <link rel="canonical" href="https://pjc.org.uk/groups/">
 <title>Groups</title>
-<meta name="description"
-  content="Portsmouth Joggers has many running groups of different abilities and purposes, herein each group is introduced and detailed.">
+<meta name="description" content="Portsmouth Joggers has many running groups of different abilities and purposes, herein each group is introduced and detailed.">
+
+<link rel="stylesheet" href="relativespeeds.css">
 
 <style>
   /** page styles*/
-  section>figure {
+  section>figure,
+  aside {
     float: right;
-    max-width: 45%
+    max-width: 45%;
+    margin-left: 1em;
   }
 
   figure figcaption>a {
@@ -39,13 +43,30 @@
   <article>
     <h1>Our Running Groups</h1>
 
-    <p>Across the 10 PJC running groups we have a mix of speeds and distances. We try to cater for everyone regardless
-      of where you are on your running journey. Runners are welcome to move between groups at any time, depending on
-      your needs/goals, or just to try something different. In addition to the groups listed below we sometimes have
-      specific running groups for events such as the Great South Run.
+    <aside id="--groups-container">
+      <div id="--fastslow">
+        <span>&lt; &lt; &lt; slower</span>
+        <span>faster &gt; &gt; &gt; </span>
+      </div>
+      <a href="/c25k/" id="--c25k">Couch to 5K</a>
+      <a href="#early-birds" id="--early-birds">Early Birds</a>
+      <a href="#social" id="--social">Social Runners</a>
+      <a href="#next-step" id="--next-step">Next Step</a>
+      <a href="#inbetweeners" id="--inbetweeners">Inbetweeners</a>
+      <a href="#pace-cadets" id="--pace-cadets">Pace Cadets</a>
+      <a href="#pacers" id="--pacers">Pacers</a>
+      <a href="#racers" id="--racers">Racers</a>
+      <a href="#endurance" id="--endurance">Endurance</a>
+    </aside>
+
+    <p>We have multiple running groups that focus on different speeds and distances, so regardless of where you are on your running journey there's a group that you can run with.
+
+    <p>Runners are welcome to move between groups at any time, and you can choose which group to run with at each session based on what works best for you. If your goals change, no problem! If you want to try something different, great!.
+
+    <p>In addition to the groups detailed here we sometimes have specific running groups for events such as the Great South Run.
 
 
-    <section>
+    <section id="racers">
       <h2>Racers</h2>
       <p>Tony Conway and Kate Lewis have the pleasure of leading the Whacky Racers.
 
@@ -89,7 +110,7 @@
     </section>
 
 
-    <section>
+    <section id="pacers">
       <h2>Pacers</h2>
       <p>Led by Pete Birch
       <figure>
@@ -121,7 +142,7 @@
 
 
 
-    <section>
+    <section id="pace-cadets">
       <h2>Pace Cadets</h2>
       <p>Led by Gina Reeve and Richard Sullivan
 
@@ -165,10 +186,10 @@
         increase your distance, or train for a specific event. We look forward to running with you!
     </section>
 
-    <section>
+    <section id="endurance">
       <h2>Endurance</h2>
-      <p>Led by Teresa & Phil
-      <!-- <div class="sidebyside">
+      <p>Led by Teresa Baverstock and Phil Hoy
+        <!-- <div class="sidebyside">
         <figure>
           <img src="nopic.jpg" alt="Teresa" loading="lazy">
           <figcaption>
@@ -190,7 +211,7 @@
 
     </section>
 
-    <section>
+    <section id="inbetweeners">
       <h2>Inbetweeners</h2>
       <p>Led by Steve Hyson and Tony Quinn
 
@@ -205,7 +226,7 @@
 
         <figure>
           <img src="tonyq.jpg" alt="Tony Quinn" loading="lazy">
-          <figcaption>Tony's introduction to running was completing the couch to 5k programme on his own!  He's been an active group leader since he completed his Leader in Running Fitness (LiRF) and Coach in Running Fitness (CiRF) qualifications in 2019.</figcaption>
+          <figcaption>Tony's introduction to running was completing the couch to 5k programme on his own! He's been an active group leader since he completed his Leader in Running Fitness (LiRF) and Coach in Running Fitness (CiRF) qualifications in 2019.</figcaption>
         </figure>
 
       </div>
@@ -227,7 +248,7 @@
     </section>
 
 
-    <section id="nextstep">
+    <section id="next-step">
       <h2>Next Step</h2>
       <p>Led by Sue Clarke and Sue Hyson
 
@@ -296,7 +317,7 @@
       <p>If you fancy a run/walk or gentle plod with a group of like-minded people then why not come and join us.
     </section>
 
-    <section>
+    <section id="early-birds">
       <h2>Early Birds</h2>
       <p>Led by Mandy Mapplebeck
 
