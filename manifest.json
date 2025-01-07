@@ -1,0 +1,37 @@
+{
+  "name": "Portsmouth Joggers Club",
+  "short_name": "PJC",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0038A6",
+  "icons": [
+    {
+      "src": "/x/logo-pj.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/x/logo-pj.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "description": "We are Portsmouth Joggers, a friendly & inclusive running club for runners in Portsmouth and the surrounding area.  Here you can find information about the club, our running groups, and all the events we organise and participate in.",
+  "screenshots": [
+    {
+     "src": "x/screenshot1.png",
+      "sizes": "916x916",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Portsmouth Joggers Club"
+    },
+    {
+      "src": "x/screenshot2.png",
+       "sizes": "917x917",
+       "type": "image/png",
+       "form_factor": "wide",
+       "label": "Events and Races"
+     }
+ ]
+}
