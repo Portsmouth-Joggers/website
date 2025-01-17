@@ -20,8 +20,6 @@ function highlightCurrent(item, currentUrl) {
   // remove trailing "/" from currentUrl
   currentUrl = currentUrl.endsWith('/') ? currentUrl.slice(0, -1) : currentUrl;
 
-  console.log(item, currentUrl, xhref);
-
   if (xhref.length === 0) {
     if (location.pathname.length === 1) {
       item.classList.add('current');
