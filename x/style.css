@@ -25,9 +25,9 @@ body {
 }
 
 article a {
-    background: var(--page);
-    border-radius: var(--buttoncurve);
     color: var(--link);
+    background: var(--link-bg);
+    border-radius: var(--buttoncurve);
     text-decoration: none;
     margin-left: -0.25em;
     margin-right: -0.25em;
@@ -35,9 +35,14 @@ article a {
     padding-right: 0.25em;
 }
 
+article a:visited {
+    color: var(--vlink);
+    background-color: var(--vlink-bg);
+}
+
 article a:hover {
-    background-color: var(--col2);
-    color: var(--page);
+    color: var(--hlink);
+    background-color: var(--hlink-bg);
 }
 
 :is(h1, h2, h3, h4, h5, h6) a {
@@ -262,9 +267,9 @@ figure>figcaption a {
 }
 
 .actionButton {
+    color: var(--col2) !important;
+    background-color: var(--col1) !important;
     float: right;
-    background-color: var(--col2);
-    color: white;
     text-align: center;
     text-decoration: none;
     font-size: 2em;
@@ -279,8 +284,10 @@ figure>figcaption a {
     transition: all 0.5s;
 }
 
+
 .actionButton:hover {
+    color: var(--col2light) !important;
+    background-color: var(--col2) !important;
     transform: rotateZ(0deg) scale(1.05);
     box-shadow: 0 0.4em 0.5em rgba(0, 0, 0, 0.75);
-    color: var(--col1);
 }

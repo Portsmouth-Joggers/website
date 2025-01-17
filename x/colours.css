@@ -11,8 +11,14 @@
   --textinv: #eee;
   --bgcol: var(--page);
   --bgcol2: #dadada;
+
   --link: var(--col2);
-  --vlink: var(--col1);
+  --hlink: var(--page);
+  --vlink: var(--col2);
+
+  --link-bg: var(--page);
+  --hlink-bg: var(--col2);
+  --vlink-bg: var(--page);
 
   --headertext: var(--page);
   --sidemenu-bg: var(--col2);
@@ -37,8 +43,14 @@
     --page: var(--bgcol);
     --text: #EEE;
     --textinv: #999;
+
     --link: var(--col2light);
-    --vlink: var(--text);
+    --hlink: var(--page);
+    --vlink: var(--col2light);
+  
+    --link-bg: var(--page);
+    --hlink-bg: var(--col2light);
+    --vlink-bg: var(--page);
 
     --headertext: var(--text);
 
