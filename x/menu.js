@@ -12,6 +12,16 @@ function highlightCurrent(item, currentUrl) {
   const href = item.getAttribute('href');
   const xhref = href.endsWith('/') ? href.slice(0, -1) : href;
 
+  // remove trailing "index.html" from currentUrl if present
+  if (currentUrl.endsWith('index.html')) {
+    currentUrl = currentUrl.slice(0, -10);
+  }
+
+  // remove trailing "/" from currentUrl
+  currentUrl = currentUrl.endsWith('/') ? currentUrl.slice(0, -1) : currentUrl;
+
+  console.log(item, currentUrl, xhref);
+
   if (xhref.length === 0) {
     if (location.pathname.length === 1) {
       item.classList.add('current');

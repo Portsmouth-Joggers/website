@@ -55,7 +55,7 @@
     display: none;
 }
 
-.menu a .current {
+.menu a.current {
     background-color: var(--sidemenu-current-bg);
     color: var(--sidemenu-current-text);
     border-color: transparent;
