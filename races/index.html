@@ -64,7 +64,48 @@
   table tr a {
     background-color: inherit;
   }
+
+  table tr.past {
+    filter: grayscale(1) opacity(0.75);
+    font-weight: lighter;
+  }
+
+  table tr.next {
+    font-weight: bold;
+  }
 </style>
+
+<script>
+  function highlightRows() {
+    const today = new Date();
+    const rows = document.querySelectorAll('table tbody tr');
+    let closestFutureRow = null;
+    let closestFutureDate = null;
+
+    rows.forEach(function(row) {
+      const timeElement = row.querySelector('time');
+      if (timeElement) {
+        const eventDate = new Date(timeElement.getAttribute('datetime'));
+        if (eventDate < today) {
+          row.classList.add('past');
+        } else {
+          row.classList.add('future');
+          if (!closestFutureDate || eventDate < closestFutureDate) {
+            closestFutureDate = eventDate;
+            closestFutureRow = row;
+          }
+        }
+      }
+    });
+
+    if (closestFutureRow) {
+      closestFutureRow.classList.remove('future');
+      closestFutureRow.classList.add('next');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', highlightRows);
+</script>
 
 <header>
   <img id="masthead" src="/x/logo-pj.svg" alt="Portsmouth Joggers Logo" width="138" height="138">
@@ -151,14 +192,14 @@
             <td><a href="https://hrrl.co.uk/">HRRL</a></td>
           </tr>
           <tr>
-            <td><time datetime="2025-07-06">6th Jul 2025</time></td>
-            <td><a href="https://www.lordshillroadrunners.org.uk/races/lordshill-10k/">Lordshill 10k</a></td>
-            <td><a href="https://hrrl.co.uk/">HRRL</a></td>
-          </tr>
-          <tr>
             <td><time datetime="2025-06-08">8th June 2025</time></td>
             <td><a href="./pl5/">Purbrook Ladies 5</a></td>
             <td><a href="./pl5/">PJC</a></td>
+          </tr>
+          <tr>
+            <td><time datetime="2025-07-06">6th Jul 2025</time></td>
+            <td><a href="https://www.lordshillroadrunners.org.uk/races/lordshill-10k/">Lordshill 10k</a></td>
+            <td><a href="https://hrrl.co.uk/">HRRL</a></td>
           </tr>
           <tr>
             <td><time>Summer 2025</time></td>
