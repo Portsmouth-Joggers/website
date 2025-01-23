@@ -64,7 +64,48 @@
   table tr a {
     background-color: inherit;
   }
+
+  table tr.past {
+    filter: grayscale(1) opacity(0.75);
+    font-weight: lighter;
+  }
+
+  table tr.next {
+    font-weight: bold;
+  }
 </style>
+
+<script>
+  function highlightRows() {
+    const today = new Date();
+    const rows = document.querySelectorAll('table tbody tr');
+    let closestFutureRow = null;
+    let closestFutureDate = null;
+
+    rows.forEach(function(row) {
+      const timeElement = row.querySelector('time');
+      if (timeElement) {
+        const eventDate = new Date(timeElement.getAttribute('datetime'));
+        if (eventDate < today) {
+          row.classList.add('past');
+        } else {
+          row.classList.add('future');
+          if (!closestFutureDate || eventDate < closestFutureDate) {
+            closestFutureDate = eventDate;
+            closestFutureRow = row;
+          }
+        }
+      }
+    });
+
+    if (closestFutureRow) {
+      closestFutureRow.classList.remove('future');
+      closestFutureRow.classList.add('next');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', highlightRows);
+</script>
 
 <header>
   <img id="masthead" src="/x/logo-pj.svg" alt="Portsmouth Joggers Logo" width="138" height="138">
@@ -107,66 +148,71 @@
         </thead>
         <tbody>
           <tr>
-            <td>1st Dec 2024</td>
+            <td><time datetime="2024-12-01">1st Dec 2024</time></td>
             <td><a href="https://register.enthuse.com/ps/event/The78thVictory5Mile2024">Victory 5 mile</a></td>
             <td><a href="https://hrrl.co.uk/">HRRL</a></td>
           </tr>
           <tr>
-            <td>15th Dec 2024</td>
+            <td><time datetime="2024-12-15">15th Dec 2024</time></td>
             <td><a href="https://www.southerncrosscountryleague.co.uk/lordwandsworth.aspx">Lord Wandsworth College</a></td>
             <td><a href="https://www.southerncrosscountryleague.co.uk/">SCCL</a></td>
           </tr>
 
           <tr>
-            <td>27th Dec 2024</td>
+            <td><time datetime="2024-12-27">27th Dec 2024</time></td>
             <td><a href="/races/p2p/">Pub2Pub</a></td>
             <td><a href="/races/p2p/">PJC</a></td>
           </tr>
 
           <tr>
-            <td>29th Dec 2024</td>
+            <td><time datetime="2024-12-29">29th Dec 2024</time></td>
             <td><a href="https://www.southerncrosscountryleague.co.uk/aliceholt.aspx">Alice Holt</a></td>
             <td><a href="https://www.southerncrosscountryleague.co.uk/">SCCL</a></td>
           </tr>
           <tr>
-            <td>12th Jan 2025</td>
+            <td><time datetime="2025-01-12">12th Jan 2025</time></td>
             <td><a href="https://www.stubbingtongreenrunners.net/stubbington-10k/">Stubbington 10k</a></td>
             <td><a href="https://hrrl.co.uk/">HRRL</a></td>
           </tr>
           <tr>
-            <td>19th Jan 2025</td>
+            <td><time datetime="2025-01-19">19th Jan 2025</time></td>
             <td><a href="https://www.southerncrosscountryleague.co.uk/chawtonhouse.aspx">Chawton House</a></td>
             <td><a href="https://www.southerncrosscountryleague.co.uk/">SCCL</a></td>
           </tr>
           <tr>
-            <td>2nd Feb 2025</td>
+            <td><time datetime="2025-02-02">2nd Feb 2025</time></td>
             <td><a href="https://www.rydeharriers.co.uk/races/the-ryde-10-mile-road-race/">Ryde 10 mile</a></td>
             <td><a href="https://hrrl.co.uk/">HRRL</a></td>
           </tr>
           <tr>
-            <td>6th Apr 2025</td>
+            <td><time datetime="2025-04-06">6th Apr 2025</time></td>
             <td><a href="https://www.salisbury-arc.org/salisbury-10">Salisbury 10 mile</a></td>
             <td><a href="https://hrrl.co.uk/">HRRL</a></td>
           </tr>
           <tr>
-            <td>8th June 2025</td>
+            <td><time datetime="2025-05-11">11th May 2025</time></td>
+            <td><a href="https://www.altonrunners.co.uk/contents/396-alton-ten">Alton 10</a></td>
+            <td><a href="https://hrrl.co.uk/">HRRL</a></td>
+          </tr>
+          <tr>
+            <td><time datetime="2025-06-08">8th June 2025</time></td>
             <td><a href="./pl5/">Purbrook Ladies 5</a></td>
             <td><a href="./pl5/">PJC</a></td>
           </tr>
           <tr>
-            <td>15th June 2025</td>
+            <td><time datetime="2025-06-15">15th June 2025</time></td>
             <td><a href="https://www.hampshireathletics.org.uk/events/2025-06-15-alresford-10k/">Alresford 10k</a></td>
             <td><a href="https://hrrl.co.uk/">HRRL</a></td>
           </tr>
           <tr>
-            <td>6th Jul 2025</td>
-            <td><a href="https://www.lordshillroadrunners.org.uk/races/lordshill-10k/">Lordshill 10k</a></td>
-            <td><a href="https://hrrl.co.uk/">HRRL</a></td>
-          </tr>
-          <tr>
-            <td>Summer 2025</td>
+            <td><time datetime="2025-07-02">2nd July 2025</time></td>
             <td><a href="./sxc/">Summer Cross Country</a></td>
             <td><a href="./sxc/">PJC</a></td>
+          </tr>
+          <tr>
+            <td><time datetime="2025-07-06">6th July 2025</time></td>
+            <td><a href="https://www.lordshillroadrunners.org.uk/races/lordshill-10k/">Lordshill 10k</a></td>
+            <td><a href="https://hrrl.co.uk/">HRRL</a></td>
           </tr>
         </tbody>
       </table>
