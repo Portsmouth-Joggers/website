@@ -11,6 +11,7 @@
   --textinv: #eee;
   --bgcol: var(--page);
   --bgcol2: #dadada;
+  --col4: #0038A6;
 
   --link: var(--col2);
   --hlink: var(--page);
@@ -39,6 +40,7 @@
     --col2: #125;
     --col2light: #FECB00;
     --col1light: #249;
+    --col4: hsl(0, 0%, 71%);
 
     --page: var(--bgcol);
     --text: #EEE;
