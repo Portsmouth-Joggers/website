@@ -42,17 +42,26 @@
       {
         "text": "Instagram",
         "href": "https://www.instagram.com/portsmouthjoggers/",
-        "icon": "/x/logo-ig.svg"
+        "icon": "/x/logo-ig.svg",
+        "target": "_blank"
       },
       {
         "text": "Facebook",
         "href": "https://www.facebook.com/groups/129643517173916",
-        "icon": "/x/logo-fb.svg"
+        "icon": "/x/logo-fb.svg",
+        "target": "_blank"
       },
       {
         "text": "Members",
         "href": "https://www.facebook.com/groups/786928831462848",
-        "icon": "/x/logo-fb.svg"
+        "icon": "/x/logo-fb.svg",
+        "target": "_blank"
+      },
+      {
+      "text": "Strava",
+      "href": "https://www.strava.com/clubs/portsmouthjoggers",
+      "icon": "/x/logo-strava.svg",
+      "target": "_blank"
       }
     ]
   }

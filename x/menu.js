@@ -50,6 +50,14 @@ function renderMenu(data) {
       const anchor = document.createElement('a');
       anchor.textContent = item.text;
       anchor.setAttribute('href', item.href);
+
+      // Check if 'target' exists in the item and apply it
+      if (item.target) {
+        anchor.target = item.target;  // Add target to open in a new tab
+      } else {
+        anchor.target = '_self';  // Default to open in the same tab
+      }
+      
       if (item.icon) {
         const img = document.createElement('img');
         img.setAttribute('src', item.icon);
