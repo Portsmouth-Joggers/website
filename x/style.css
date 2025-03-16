@@ -210,7 +210,7 @@ main a {
    * a section
    */
 main :is(article, section:last-child)>p:last-child:not(p:first-child) {
-    text-wrap: balance;
+    /* text-wrap: balance; */  /* Removed to fix last paragraph gaps */
 }
 
 
