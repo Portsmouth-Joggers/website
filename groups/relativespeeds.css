@@ -11,8 +11,9 @@
     "x inbetweeners inbetweeners"
     "x next-step next-step"
     "x early-birds early-birds"
-    "x social social";
-  border-radius: 0.4rem;
+    "x social social"
+    "x walking walking";
+    border-radius: 0.4rem;
   border: none;
   padding: 0.5rem;
   background: linear-gradient(rgba(0, 0, 255, 0.35),
@@ -70,6 +71,11 @@
   color: white;
 }
 
+#--walking-group {
+  grid-area: walking;
+  background-color: rgb(216, 89, 182);
+  color: white;
+}
 #--next-step {
   grid-area: next-step;
   background-color: #ff0;
