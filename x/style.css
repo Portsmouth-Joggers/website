@@ -263,7 +263,7 @@ figure>figcaption {
 
 figure > figcaption a,
 figure > figcaption a:visited {
-    color: var(--text);
+    color: var(--figure-text);
     background: var(--col1light);
     text-decoration: underline;
     transition: color 0.3s ease;
