@@ -261,9 +261,20 @@ figure>figcaption {
     padding: 0.25em 0.5em;
 }
 
-figure>figcaption a {
-    background: var(--col1light);
+figure > figcaption a,
+figure > figcaption a:visited {
     color: var(--text);
+    background: var(--col1light);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+figure > figcaption a:hover,
+figure > figcaption a:focus {
+    color: #ffcc00;
+    background: var(--col1light);
+    text-decoration: underline;
+    outline: none;
 }
 
 .actionButton {
