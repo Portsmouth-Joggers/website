@@ -222,6 +222,26 @@ main :is(article, section:last-child)>p:last-child:not(p:first-child) {
     grid-template-columns: 1fr 1fr;
 }
 
+.left-pair {
+    display: inline-flex;
+    gap: 1em;
+    align-items: flex-start;
+    margin-bottom: 1em;
+}
+
+.left-pair .member {
+    width: 22em;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.left-pair .member img {
+    width: 100%;
+    height: auto;
+    display:block;
+}
+
 .three-columns {
     grid-template-columns: 1fr 1fr 1fr;
 }
