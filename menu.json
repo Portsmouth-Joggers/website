@@ -15,6 +15,10 @@
         "href": "/c25k/"
       },
       {
+        "text": "GSR Training",
+        "href": "/gsr/"
+      } ,
+      {
         "text": "Races & Events",
         "href": "/races/"
       },
@@ -38,6 +42,7 @@
         "text": "50th Birthday",
         "href": "/birthday/"
       }
+     
     ]
   },
   {
