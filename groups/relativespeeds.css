@@ -1,19 +1,17 @@
 #--groups-container {
   width: fit-content;
   display: grid;
-  grid-template-columns: 1fr auto auto auto;
+  grid-template-columns: 1fr auto auto;
   grid-template-rows: auto;
   gap: 0.25rem 0.5rem;
   grid-template-areas:
-    "x racers racers"
     "x endurance endurance"
+    "x racers racers"
     "x pacers pacers"
     "x pace-cadets pace-cadets"
     "x inbetweeners inbetweeners"
     "x next-step next-step"
-    "x early-birds early-birds"
-    "x social social"
-    "x walking walking";
+    "x social social";
     border-radius: 0.4rem;
   border: none;
   padding: 0.5rem;
@@ -36,12 +34,12 @@
   padding: 0.25rem 0.5rem;
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: flex-start;
   border-radius: 0.2rem;
   text-decoration: none;
   margin: 0;
   transition: all 0.2s;
-  min-height: em;
+  min-height: 2em;
 }
 
 #--fastslow {
@@ -54,62 +52,45 @@
   min-height: 16rem;
 }
 
-#--c25k {
-  grid-area: c25k;
-  background-color: #f00;
-  color: white;
-}
-
-#--early-birds {
-  grid-area: early-birds;
-  background-color: #fc0;
-  color: black;
-}
-
 #--social {
   grid-area: social;
-  background-color: #ff8c00;
+  background-color: #e53935;
   color: white;
 }
 
-#--walking-group {
-  grid-area: walking;
-  background-color: #d62828;
-  color: white;
-}
 #--next-step {
   grid-area: next-step;
-  background-color: #ffd700;
+  background-color: #f28c28;
   color: black;
 }
 
 #--inbetweeners {
   grid-area: inbetweeners;
-  background-color: #00b050;
+  background-color: #e0b000;
   color: black;
 }
 
 #--pace-cadets {
   grid-area: pace-cadets;
-  background-color: #00d8d8;
+  background-color: #2eaa58;
   color: black;
 }
 
 #--pacers {
   grid-area: pacers;
-  background-color: #00a0ff;
+  background-color: #008f9c;
   color: white;
 }
 
 #--racers {
   grid-area: racers;
-  background-color: #3f00ff;
+  background-color: #1769e0;
   color: white;
 }
 
 #--endurance {
   grid-area: endurance;
-  background-color: #0050d8;
+  background-color: #7431c9;
   color: white;
 }
 
@@ -117,9 +98,8 @@
   text-orientation: sideways-right;
   writing-mode: vertical-rl;
   transform: rotate(-180deg);
-  text-align: middle;
+  text-align: center;
 }
-
 
 #--groups-container a:hover {
   filter: brightness(0.9);
