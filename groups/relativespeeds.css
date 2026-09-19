@@ -1,18 +1,17 @@
 #--groups-container {
   width: fit-content;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto auto;
   grid-template-rows: auto;
   gap: 0.25rem 0.5rem;
   grid-template-areas:
-    "x racers endurance"
-    "x pacers endurance"
-    "x pace-cadets endurance"
+    "x endurance endurance"
+    "x racers racers"
+    "x pacers pacers"
+    "x pace-cadets pace-cadets"
     "x inbetweeners inbetweeners"
     "x next-step next-step"
-    "x early-birds early-birds"
-    "x social social"
-    "x walking walking";
+    "x social social";
     border-radius: 0.4rem;
   border: none;
   padding: 0.5rem;
@@ -35,12 +34,12 @@
   padding: 0.25rem 0.5rem;
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: flex-start;
   border-radius: 0.2rem;
   text-decoration: none;
   margin: 0;
   transition: all 0.2s;
-  min-height: em;
+  min-height: 2em;
 }
 
 #--fastslow {
@@ -53,73 +52,54 @@
   min-height: 14rem;
 }
 
-#--c25k {
-  grid-area: c25k;
-  background-color: #f00;
-  color: white;
-}
-
-#--early-birds {
-  grid-area: early-birds;
-  background-color: #fc0;
-  color: black;
-}
-
 #--social {
   grid-area: social;
-  background-color: #f60;
+  background-color: #e53935;
   color: white;
 }
 
-#--walking-group {
-  grid-area: walking;
-  background-color: rgb(216, 89, 182);
-  color: white;
-}
 #--next-step {
   grid-area: next-step;
-  background-color: #ff0;
-  color: black;
+  background-color: #f28c28;
+  color: white;
 }
 
 #--inbetweeners {
   grid-area: inbetweeners;
-  background-color: #0f0;
-  color: black;
+  background-color: #e0b000;
+  color: white;
 }
 
 #--pace-cadets {
   grid-area: pace-cadets;
-  background-color: #0ff;
-  color: black;
+  background-color: #2eaa58;
+  color: white;
 }
 
 #--pacers {
   grid-area: pacers;
-  background-color: #00f;
+  background-color: #008f9c;
   color: white;
 }
 
 #--racers {
   grid-area: racers;
-  background-color: #00C;
+  background-color: #1769e0;
   color: white;
 }
 
 #--endurance {
   grid-area: endurance;
-  background-color: #F0C;
+  background-color: #7431c9;
   color: white;
 }
 
-#--endurance,
 #--fastslow {
   text-orientation: sideways-right;
   writing-mode: vertical-rl;
   transform: rotate(-180deg);
-  text-align: middle;
+  text-align: center;
 }
-
 
 #--groups-container a:hover {
   filter: brightness(0.9);
@@ -129,8 +109,3 @@
 }
 
 
-#--groups-container #--endurance:hover {
-  transform: scale(1.1) rotate(-180deg);
-  box-shadow: 0 -0.25rem 0.25rem #444;
-  z-index: 2;
-}
