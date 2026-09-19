@@ -61,19 +61,19 @@
 #--next-step {
   grid-area: next-step;
   background-color: #f28c28;
-  color: black;
+  color: white;
 }
 
 #--inbetweeners {
   grid-area: inbetweeners;
   background-color: #e0b000;
-  color: black;
+  color: white;
 }
 
 #--pace-cadets {
   grid-area: pace-cadets;
   background-color: #2eaa58;
-  color: black;
+  color: white;
 }
 
 #--pacers {
