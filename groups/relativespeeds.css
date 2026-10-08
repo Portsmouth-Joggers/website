@@ -11,6 +11,7 @@
     "x pace-cadets pace-cadets"
     "x inbetweeners inbetweeners"
     "x next-step next-step"
+    "x beyond-5k beyond-5k"
     "x social social";
     border-radius: 0.4rem;
   border: none;
@@ -55,6 +56,11 @@
 #--social {
   grid-area: social;
   background-color: #e53935;
+  color: white;
+}
+#--beyond-5k {
+  grid-area: beyond-5k;
+  background-color: #dc55b1;
   color: white;
 }
 
