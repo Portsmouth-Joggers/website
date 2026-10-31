@@ -1,0 +1,117 @@
+#--groups-container {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-template-rows: auto;
+  gap: 0.25rem 0.5rem;
+  grid-template-areas:
+    "x endurance endurance"
+    "x racers racers"
+    "x pacers pacers"
+    "x pace-cadets pace-cadets"
+    "x inbetweeners inbetweeners"
+    "x next-step next-step"
+    "x beyond-5k beyond-5k"
+    "x social social";
+    border-radius: 0.4rem;
+  border: none;
+  padding: 0.5rem;
+  background: linear-gradient(rgba(0, 0, 255, 0.35),
+      rgba(0, 0, 128, 0.35),
+      rgba(0, 255, 0, 0.35),
+      rgba(255, 255, 0, 0.35),
+      rgba(255, 165, 0, 0.35),
+      rgba(255, 0, 0, 0.35));
+  cursor: default;
+  box-shadow: 0 0.25rem 0.25rem #4449 inset;
+}
+
+#--groups-container span {
+  font-weight: bold;
+}
+
+#--groups-container a {
+  border: thin solid var(--text);
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 0.2rem;
+  text-decoration: none;
+  margin: 0;
+  transition: all 0.2s;
+  min-height: 2em;
+}
+
+#--fastslow {
+  grid-area: x;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  min-height: 14rem;
+}
+
+#--social {
+  grid-area: social;
+  background-color: #e53935;
+  color: white;
+}
+#--beyond-5k {
+  grid-area: beyond-5k;
+  background-color: #dc55b1;
+  color: white;
+}
+
+#--next-step {
+  grid-area: next-step;
+  background-color: #f28c28;
+  color: white;
+}
+
+#--inbetweeners {
+  grid-area: inbetweeners;
+  background-color: #e0b000;
+  color: white;
+}
+
+#--pace-cadets {
+  grid-area: pace-cadets;
+  background-color: #2eaa58;
+  color: white;
+}
+
+#--pacers {
+  grid-area: pacers;
+  background-color: #008f9c;
+  color: white;
+}
+
+#--racers {
+  grid-area: racers;
+  background-color: #1769e0;
+  color: white;
+}
+
+#--endurance {
+  grid-area: endurance;
+  background-color: #7431c9;
+  color: white;
+}
+
+#--fastslow {
+  text-orientation: sideways-right;
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+  text-align: center;
+}
+
+#--groups-container a:hover {
+  filter: brightness(0.9);
+  transform: scale(1.1);
+  box-shadow: 0 0.25rem 0.25rem #444;
+  z-index: 2;
+}
+
+

@@ -1,0 +1,73 @@
+[
+  {
+    "title": "Menu",
+    "items": [
+      {
+        "text": "About Us",
+        "href": "/"
+      },
+      {
+        "text": "Running Groups",
+        "href": "/groups/"
+      },
+      {
+        "text": "Couch to 5K",
+        "href": "/c25k/"
+      },
+      {
+        "text": "Races & Events",
+        "href": "/races/"
+      },
+      {
+        "text": "Member Hub",
+        "href": "/members/"
+      },
+      {
+        "text": "Newsletters",
+        "href": "/newsletters/"
+      },
+      {
+        "text": "The Committee",
+        "href": "/committee/"
+      },
+      {
+        "text": "Join Us",
+        "href": "/join/"
+      },
+      {
+        "text": "50th Birthday",
+        "href": "/birthday/"
+      }
+     
+    ]
+  },
+  {
+    "title": "Social Media",
+    "items": [
+      {
+        "text": "Instagram",
+        "href": "https://www.instagram.com/portsmouthjoggers/",
+        "icon": "/x/logo-ig.svg",
+        "target": "_blank"
+      },
+      {
+        "text": "Facebook",
+        "href": "https://www.facebook.com/groups/129643517173916",
+        "icon": "/x/logo-fb.svg",
+        "target": "_blank"
+      },
+      {
+        "text": "Members",
+        "href": "https://www.facebook.com/groups/786928831462848",
+        "icon": "/x/logo-fb.svg",
+        "target": "_blank"
+      },
+      {
+      "text": "Strava",
+      "href": "https://www.strava.com/clubs/portsmouthjoggers",
+      "icon": "/x/logo-strava.svg",
+      "target": "_blank"
+      }
+    ]
+  }
+]

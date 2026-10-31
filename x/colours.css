@@ -1,0 +1,67 @@
+:root {
+  --col1: #FECB00;
+  --col1light: #FDDB6F;
+  --col2: #0038A6;
+  --col2light: #ABBDE1;
+  --col2dark: hsla(20, 85%, 32%, 50%);
+  --page: #fdfdfd;
+  --text: #222222;
+  --col3: #555555;
+  --midgrey: #ccc;
+  --textinv: #eee;
+  --bgcol: var(--page);
+  --bgcol2: #dadada;
+  --col4: #0038A6;
+
+  --link: var(--col2);
+  --hlink: var(--page);
+  --vlink: var(--col2);
+
+  --link-bg: var(--page);
+  --hlink-bg: var(--col2);
+  --vlink-bg: var(--page);
+
+  --headertext: var(--page);
+  --sidemenu-bg: var(--col2);
+  --sidemenu-text: var(--page);
+  --sidemenu-current-bg: var(--page);
+  --sidemenu-current-text: var(--text);
+
+  --figure-shadow: #4447;
+  --shadow: 0 0.5em 1em var(--figure-shadow);
+  --figure-text: var(--page);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bgcol: #222;
+    --bgcol2: #334;
+    --col1: hsl(0, 0%, 71%);
+    --col2: #125;
+    --col2light: #FECB00;
+    --col1light: #249;
+    --col4: hsl(0, 0%, 71%);
+
+    --page: var(--bgcol);
+    --text: #EEE;
+    --textinv: #999;
+
+    --link: var(--col2light);
+    --hlink: var(--page);
+    --vlink: var(--col2light);
+  
+    --link-bg: var(--page);
+    --hlink-bg: var(--col2light);
+    --vlink-bg: var(--page);
+
+    --headertext: var(--text);
+
+    --sidemenu-bg: var(--col2);
+    --sidemenu-text: #CCC;
+    --sidemenu-current-bg: var(--text);
+    --sidemenu-current-text: var(--bgcol);
+
+    --figure-shadow: black;
+    --figure-text: var(--col2light);;
+  }
+}
